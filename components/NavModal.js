@@ -2,18 +2,22 @@ import { useState } from "react";
 
 export default function NavModal() {
   const [navModal, setNavModal] = useState(false);
-
+  console.log(navModal);
   // disables scroll bars when
   // modal is visible
-  navModal
-    ? (document.body.style.overflow = "visible")
-    : (document.body.style.overflow = "hidden");
+  const handleNavModal = () => {
+    console.log("why am i being called");
+    setNavModal(!navModal);
+    navModal
+      ? (document.body.style.overflow = "visible")
+      : (document.body.style.overflow = "hidden");
+  };
 
   return (
     <div className="flex w-full justify-end items-center">
       <ul className="sm:hidden  text-blue-400">
         <li
-          onClick={() => setNavModal(!navModal)}
+          onClick={handleNavModal}
           className="text-center px-2 border  border-red-400"
         >
           <svg
@@ -35,10 +39,10 @@ export default function NavModal() {
 
       <div
         className={` transition-all duration-200 top-0 w-full  absolute bg-gray-800 h-screen  ${
-          navModal ? "-left-full" : "left-0"
+          navModal ? "left-0" : "-left-full"
         }`}
       >
-        <div onClick={() => setNavModal(!navModal)}>hide/show modal</div>
+        <div onClick={handleNavModal}>hide/show modal</div>
       </div>
     </div>
   );

@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 
-const NavBar = () => {
+import isInViewport from "../utils/isInViewPort";
+
+import NavItems from "./NavItems";
+
+const NavBar = ({ activeNav, setActiveNav }) => {
   const [mountNav, setMountNav] = useState(null);
-  console.log(mountNav);
 
   const handleScroll = (e) => {
-    if (window.scrollY > 64) {
+    if (window.scrollY > 40) {
       setMountNav(false);
     } else {
       setMountNav(true);
     }
+    if (isInViewport(document.getElementById("home"))) setActiveNav(0);
+    if (isInViewport(document.getElementById("about"))) setActiveNav(1);
+    if (isInViewport(document.getElementById("projects"))) setActiveNav(2);
   };
 
   useEffect(() => {
@@ -21,15 +27,11 @@ const NavBar = () => {
     };
   }, []);
 
-  switch (mountNav) {
-    case true:
-      return <div className="fixed w-full h-20 bg-gray-500"></div>;
-      break;
-    case false:
-      return <div className="fixed w-full h-16 bg-gray-500"></div>;
-    default:
-      return <div></div>;
-  }
+  return (
+    <div>
+      <NavItems activeNav={activeNav} mountNav={mountNav} />
+    </div>
+  );
 };
 
 export default NavBar;

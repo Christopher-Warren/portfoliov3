@@ -13,6 +13,7 @@ const NavBar = ({ activeLink, setActiveLink }) => {
     } else {
       setExpandNav(true);
     }
+
     if (isInViewport(document.getElementById("home"))) setActiveLink(0);
     if (isInViewport(document.getElementById("about"))) setActiveLink(1);
     if (isInViewport(document.getElementById("projects"))) setActiveLink(2);
@@ -20,6 +21,7 @@ const NavBar = ({ activeLink, setActiveLink }) => {
 
   useEffect(() => {
     handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return function cleanup() {
       window.removeEventListener("scroll", handleScroll);
@@ -28,7 +30,7 @@ const NavBar = ({ activeLink, setActiveLink }) => {
 
   return (
     <div
-      className={`text-2xl flex justify-end fixed top-0 w-full bg-gray-900 transition-all ease-in-out ${
+      className={`text-2xl flex fixed top-0 w-full bg-gray-900 transition-all ease-in-out ${
         expandNav ? "h-20 duration-700" : "h-16 glow-md duration-500"
       }`}
     >

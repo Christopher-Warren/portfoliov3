@@ -14,18 +14,18 @@ const NavItems = ({ activeLink }) => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex justify-between w-screen mx-5 lg:mx-48">
       {/* 
-      <ul className="flex items-center border border-red-400">
-        <li className="text-center px-2 ">Chris Warren</li>
-      </ul>
-      
       SEE: onClick={handleLinkClick}
             className={activeLink === 0 ? "text-blue-400" : ""}
       @TODO extract nav links into standalone component
       
       */}
-      <NavModal />
+
+      <ul className="flex items-center border border-red-400">
+        <li className="text-center px-2 ">Chris Warren</li>
+      </ul>
+
       <ul className="sm:flex sm:items-center sm:text-4xl hidden font-bold border border-red-400 ">
         <li className="px-2">
           <a
@@ -55,6 +55,7 @@ const NavItems = ({ activeLink }) => {
           </a>
         </li>
       </ul>
+      <NavModal />
     </div>
   );
 };

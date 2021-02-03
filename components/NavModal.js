@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function NavModal() {
+export default function NavModal({ activeLink }) {
   const [navModal, setNavModal] = useState(false);
 
   // disables scroll bars when
@@ -25,8 +25,8 @@ export default function NavModal() {
   };
 
   return (
-    <div className="flex w-full justify-end items-center">
-      <ul className="sm:hidden  text-blue-400">
+    <div className="flex w-full sm:hidden justify-end items-center">
+      <ul className=" text-blue-400">
         <li
           onClick={handleNavModal}
           className="text-center px-2 border  border-red-100"
@@ -73,18 +73,18 @@ export default function NavModal() {
           </svg>
         </div>
         {/* Modal Link Content */}
-        <ul className="flex items-center sm:text-4xl font-bold border border-red-400 ">
-          <li className="px-2">
+        <ul className="flex flex-col items-center text-4xl font-bold border border-red-400 mt-10">
+          <li className="px-2 py-2">
             <a href="#home" onClick={handleLinkClick && handleNavModal}>
               Home
             </a>
           </li>
-          <li className="px-2">
+          <li className="px-2 py-2">
             <a href="#about" onClick={handleLinkClick && handleNavModal}>
               About
             </a>
           </li>
-          <li className="px-2">
+          <li className="px-2 py-2">
             <a href="#projects" onClick={handleLinkClick && handleNavModal}>
               Projects
             </a>

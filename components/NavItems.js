@@ -1,6 +1,6 @@
 import NavModal from "./NavModal";
 
-const NavItems = ({ activeNav, mountNav }) => {
+const NavItems = ({ activeLink, expandNav }) => {
   const handleNavClick = (e) => {
     e.preventDefault();
 
@@ -14,7 +14,7 @@ const NavItems = ({ activeNav, mountNav }) => {
   return (
     <div
       className={`text-2xl flex md:justify-between justify-center fixed top-0 w-full bg-gray-900 transition-all ease-in-out ${
-        mountNav ? "h-20 duration-700" : "h-16 glow-md duration-500"
+        expandNav ? "h-20 duration-700" : "h-16 glow-md duration-500"
       }`}
     >
       {/* 
@@ -26,12 +26,12 @@ const NavItems = ({ activeNav, mountNav }) => {
       
       */}
       <NavModal />
-      <ul className="hidden font-bold border border-red-600 ">
+      <ul className="sm:flex sm:items-center sm:text-4xl hidden font-bold border border-red-600 ">
         <li className="px-2">
           <a
             href="#home"
             onClick={handleNavClick}
-            className={activeNav === 0 ? "text-blue-400" : ""}
+            className={activeLink === 0 ? "text-blue-400" : ""}
           >
             Home
           </a>
@@ -40,7 +40,7 @@ const NavItems = ({ activeNav, mountNav }) => {
           <a
             href="#about"
             onClick={handleNavClick}
-            className={activeNav === 1 ? "text-blue-400" : ""}
+            className={activeLink === 1 ? "text-blue-400" : ""}
           >
             About
           </a>
@@ -49,7 +49,7 @@ const NavItems = ({ activeNav, mountNav }) => {
           <a
             href="#projects"
             onClick={handleNavClick}
-            className={activeNav === 2 ? "text-blue-400" : ""}
+            className={activeLink === 2 ? "text-blue-400" : ""}
           >
             Projects
           </a>

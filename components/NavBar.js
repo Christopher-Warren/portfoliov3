@@ -4,24 +4,23 @@ import isInViewport from "../utils/isInViewPort";
 
 import NavItems from "./NavItems";
 
-const NavBar = ({ activeNav, setActiveNav }) => {
-  const [mountNav, setMountNav] = useState(null);
+const NavBar = ({ activeLink, setActiveLink }) => {
+  const [expandNav, setExpandNav] = useState(true);
 
   const handleScroll = (e) => {
     if (window.scrollY > 40) {
-      setMountNav(false);
+      setExpandNav(false);
     } else {
-      setMountNav(true);
+      setExpandNav(true);
     }
-    if (isInViewport(document.getElementById("home"))) setActiveNav(0);
-    if (isInViewport(document.getElementById("about"))) setActiveNav(1);
-    if (isInViewport(document.getElementById("projects"))) setActiveNav(2);
+    if (isInViewport(document.getElementById("home"))) setActiveLink(0);
+    if (isInViewport(document.getElementById("about"))) setActiveLink(1);
+    if (isInViewport(document.getElementById("projects"))) setActiveLink(2);
   };
 
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-
     return function cleanup() {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -29,7 +28,7 @@ const NavBar = ({ activeNav, setActiveNav }) => {
 
   return (
     <div>
-      <NavItems activeNav={activeNav} mountNav={mountNav} />
+      <NavItems activeLink={activeLink} expandNav={expandNav} />
     </div>
   );
 };

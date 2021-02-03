@@ -4,15 +4,15 @@ import { useState } from "react";
 import NavBar from "../components/NavBar";
 
 export default function Home() {
-  const [activeNav, setActiveNav] = useState(Number);
+  const [activeLink, setActiveLink] = useState(0);
 
   return (
     <div>
       <Head>
         <title>
-          {(activeNav === 0 && "Home") ||
-            (activeNav === 1 && "About") ||
-            (activeNav === 2 && "Projects")}{" "}
+          {(activeLink === 0 && "Home") ||
+            (activeLink === 1 && "About") ||
+            (activeLink === 2 && "Projects")}{" "}
           | Christopher Warren
         </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -52,7 +52,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <NavBar activeNav={activeNav} setActiveNav={setActiveNav} />
+      <NavBar activeLink={activeLink} setActiveLink={setActiveLink} />
     </div>
   );
 }

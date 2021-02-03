@@ -1,9 +1,11 @@
 import NavModal from "./NavModal";
 
-const NavItems = ({ activeLink, expandNav }) => {
-  const handleNavClick = (e) => {
+const NavItems = ({ activeLink }) => {
+  const handleLinkClick = (e) => {
     e.preventDefault();
 
+    // gets clicked element id
+    // and scrolls to it
     document.getElementById(e.target.text.toLowerCase())
       ? document
           .getElementById(e.target.text.toLowerCase())
@@ -12,25 +14,23 @@ const NavItems = ({ activeLink, expandNav }) => {
   };
 
   return (
-    <div
-      className={`text-2xl flex md:justify-between justify-center fixed top-0 w-full bg-gray-900 transition-all ease-in-out ${
-        expandNav ? "h-20 duration-700" : "h-16 glow-md duration-500"
-      }`}
-    >
+    <div className="flex">
       {/* 
       <ul className="flex items-center border border-red-400">
         <li className="text-center px-2 ">Chris Warren</li>
       </ul>
       
-      
+      SEE: onClick={handleLinkClick}
+            className={activeLink === 0 ? "text-blue-400" : ""}
+      @TODO extract nav links into standalone component
       
       */}
       <NavModal />
-      <ul className="sm:flex sm:items-center sm:text-4xl hidden font-bold border border-red-600 ">
+      <ul className="sm:flex sm:items-center sm:text-4xl hidden font-bold border border-red-400 ">
         <li className="px-2">
           <a
             href="#home"
-            onClick={handleNavClick}
+            onClick={handleLinkClick}
             className={activeLink === 0 ? "text-blue-400" : ""}
           >
             Home
@@ -39,7 +39,7 @@ const NavItems = ({ activeLink, expandNav }) => {
         <li className="px-2">
           <a
             href="#about"
-            onClick={handleNavClick}
+            onClick={handleLinkClick}
             className={activeLink === 1 ? "text-blue-400" : ""}
           >
             About
@@ -48,7 +48,7 @@ const NavItems = ({ activeLink, expandNav }) => {
         <li className="px-2">
           <a
             href="#projects"
-            onClick={handleNavClick}
+            onClick={handleLinkClick}
             className={activeLink === 2 ? "text-blue-400" : ""}
           >
             Projects

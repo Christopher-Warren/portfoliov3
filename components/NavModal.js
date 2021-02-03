@@ -12,12 +12,24 @@ export default function NavModal() {
       : (document.body.style.overflow = "hidden");
   };
 
+  const handleLinkClick = (e) => {
+    e.preventDefault();
+
+    // gets clicked element id
+    // and scrolls to it
+    document.getElementById(e.target.text.toLowerCase())
+      ? document
+          .getElementById(e.target.text.toLowerCase())
+          .scrollIntoView({ behavior: "smooth" })
+      : console.log("404: Hash link doesn't exist");
+  };
+
   return (
     <div className="flex w-full justify-end items-center">
       <ul className="sm:hidden  text-blue-400">
         <li
           onClick={handleNavModal}
-          className="text-center px-2 border  border-red-400"
+          className="text-center px-2 border  border-red-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,6 +72,24 @@ export default function NavModal() {
             />
           </svg>
         </div>
+        {/* Modal Link Content */}
+        <ul className="flex items-center sm:text-4xl font-bold border border-red-400 ">
+          <li className="px-2">
+            <a href="#home" onClick={handleLinkClick && handleNavModal}>
+              Home
+            </a>
+          </li>
+          <li className="px-2">
+            <a href="#about" onClick={handleLinkClick && handleNavModal}>
+              About
+            </a>
+          </li>
+          <li className="px-2">
+            <a href="#projects" onClick={handleLinkClick && handleNavModal}>
+              Projects
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );

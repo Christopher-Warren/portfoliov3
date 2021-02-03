@@ -27,8 +27,12 @@ const NavBar = ({ activeLink, setActiveLink }) => {
   }, []);
 
   return (
-    <div>
-      <NavItems activeLink={activeLink} expandNav={expandNav} />
+    <div
+      className={`text-2xl flex justify-end fixed top-0 w-full bg-gray-900 transition-all ease-in-out ${
+        expandNav ? "h-20 duration-700" : "h-16 glow-md duration-500"
+      }`}
+    >
+      <NavItems activeLink={activeLink} />
     </div>
   );
 };

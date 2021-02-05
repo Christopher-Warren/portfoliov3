@@ -1,4 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
+  font-family: "Ubuntu", sans-serif;
+}
+
+li {
+  font-family: "Ubuntu", sans-serif;
+}
+
+p {
   font-family: "Ubuntu", sans-serif;
 }
 
@@ -17,7 +29,13 @@ h1 {
     0 0 0px rgba(30, 132, 242, 0.84), 0 0 0px rgba(30, 132, 242, 0.88);
 }
 
-.test-1 {
+.button:hover .svg {
+  color: white;
+  fill: rgba(37, 99, 235);
+  transform: rotate(-0.25turn);
+}
+
+/* .test-1 {
   border-width: 1px;
   border-color: rgb(255, 0, 255);
 }
@@ -29,4 +47,15 @@ h1 {
 .test-3 {
   border-width: 1px;
   border-color: rgb(0, 255, 255);
+} */
+
+span {
+  border-right: 0.05em solid;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
 }

@@ -17,16 +17,26 @@ export default function NavModal({ activeLink }) {
 
     // gets clicked element id
     // and scrolls to it
-    document.getElementById(e.target.text.toLowerCase())
-      ? document
-          .getElementById(e.target.text.toLowerCase())
-          .scrollIntoView({ behavior: "smooth" })
-      : console.log("404: Hash link doesn't exist");
+    // "home" scrolls to top
+    console.log(document.getElementById(e.target.text.toLowerCase()).id);
+    if (document.getElementById(e.target.text.toLowerCase()).id === "home") {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    } else if (document.getElementById(e.target.text.toLowerCase())) {
+      document
+        .getElementById(e.target.text.toLowerCase())
+        .scrollIntoView({ behavior: "smooth" });
+    }
+    // closes modal after clicking link
+    handleNavModal();
   };
-
+  console.log(activeLink);
   return (
-    <div className="flex w-full sm:hidden justify-end items-center">
-      <ul className=" text-blue-400">
+    <div className="flex w-full lg:hidden justify-end items-center">
+      <ul className=" text-blue-600">
         <li
           onClick={handleNavModal}
           className="text-center px-2 border  border-red-100"
@@ -49,13 +59,13 @@ export default function NavModal({ activeLink }) {
       </ul>
 
       <div
-        className={` transition-all duration-200 top-0 w-full  absolute bg-gray-800 h-screen  ${
+        className={` transition-all duration-200 top-0 w-full  absolute bg-white h-screen  ${
           navModal ? "left-0" : "-left-full"
         }`}
       >
         <div
           onClick={handleNavModal}
-          className="flex justify-center border  border-red-400"
+          className="flex justify-center border text-blue-600 border-red-400"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,17 +85,29 @@ export default function NavModal({ activeLink }) {
         {/* Modal Link Content */}
         <ul className="flex flex-col items-center text-4xl font-bold border border-red-400 mt-10">
           <li className="px-2 py-2">
-            <a href="#home" onClick={handleLinkClick && handleNavModal}>
+            <a
+              className={activeLink === 0 ? "text-blue-600" : ""}
+              href="#home"
+              onClick={handleLinkClick}
+            >
               Home
             </a>
           </li>
           <li className="px-2 py-2">
-            <a href="#about" onClick={handleLinkClick && handleNavModal}>
+            <a
+              className={activeLink === 1 ? "text-blue-600" : ""}
+              href="#about"
+              onClick={handleLinkClick}
+            >
               About
             </a>
           </li>
           <li className="px-2 py-2">
-            <a href="#projects" onClick={handleLinkClick && handleNavModal}>
+            <a
+              className={activeLink === 2 ? "text-blue-600" : ""}
+              href="#projects"
+              onClick={handleLinkClick}
+            >
               Projects
             </a>
           </li>

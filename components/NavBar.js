@@ -30,8 +30,10 @@ const NavBar = ({ activeLink, setActiveLink }) => {
 
   return (
     <div
-      className={`text-2xl flex fixed top-0 w-full bg-gray-900 transition-all ease-in-out ${
-        expandNav ? "h-20 duration-700" : "h-16 glow-md duration-500"
+      className={`text-2xl flex fixed top-0 w-full bg-white z-20 transition-all ease-in-out ${
+        expandNav
+          ? "sm:h-20 sm:duration-700 sm:shadow-none h-16 shadow-lg duration-500"
+          : "h-16 shadow-lg duration-500"
       }`}
     >
       <NavItems activeLink={activeLink} />

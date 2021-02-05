@@ -1,10 +1,62 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import NavBar from "../components/NavBar";
 
 export default function Home() {
   const [activeLink, setActiveLink] = useState(0);
+
+  useEffect(() => {
+    // array with texts to type in typewriter
+    const dataText = [
+      `import React from "react";`,
+      `const HelloWorld = () => return &lt;div&gt;Hello, World!&lt;div&gt;`,
+    ];
+
+    // type one text in the typwriter
+    // keeps calling itself until the text is finished
+    function typeWriter(text, i, fnCallback) {
+      // chekc if text isn't finished yet
+      if (i < text.length) {
+        // add next character to h1
+        document.querySelector("h2").innerHTML =
+          text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+        // wait for a while and call this function again for next character
+        setTimeout(function () {
+          typeWriter(text, i + 1, fnCallback);
+        }, 100);
+      }
+      // text finished, call callback if there is a callback function
+      else if (typeof fnCallback == "function") {
+        // call callback after timeout
+        setTimeout(fnCallback, 700);
+      }
+    }
+    // start a typewriter animation for a text in the dataText array
+    function StartTextAnimation(i) {
+      if (typeof dataText[i] == "undefined") {
+        setTimeout(function () {
+          StartTextAnimation(0);
+        }, 20000);
+      }
+      if (typeof dataText[i] == "undefined") {
+      } else {
+        if (i < dataText[i].length) {
+          // text exists! start typewriter animation
+          typeWriter(dataText[i], 0, function () {
+            // after callback (and whole text has been animated), start next text
+            StartTextAnimation(i + 1);
+          });
+        }
+      }
+      // check if dataText[i] exists
+    }
+    // start the text animation
+    StartTextAnimation(0);
+
+    return () => {};
+  }, []);
 
   return (
     <div>
@@ -27,38 +79,72 @@ export default function Home() {
       
       flex lg:flex-row flex-col h-full lg:items-start lg:justify-between items-center border  lg:mx-60 border-purple-500
       */}
-      <div className="h-screen pt-20">
+      <div className="h-screen sm:pt-20 pt-16">
         <section
           id="home"
-          className="test-1 h-full flex flex-col mx-5 lg:flex-row lg:mx-48 lg:items-center"
+          className="test-1 h-full flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-4/5 w-11/12 mx-auto"
         >
-          <article className="test-2 pb-10 lg:w-1/2">
-            <h1 className="text-green-400 text-5xl font-bold pb-5 lg:text-8xl">
+          <article className="lg:w-1/2 mb-4 md:mb-8 lg:mb-56">
+            <h1 className="text-blue-600 text-5xl font-bold my-5 lg:my-10 lg:text-8xl">
               Christopher
               <br /> Warren
             </h1>
-            <p className="text-2xl text-green-50">
-              I am a self taught Software Developer currently residing in
-              Chattanooga, TN. In early 2020 I decided to completely dedicate
-              myself to coding.
+
+            {/* <h2 className="hidden text-3xl text-red-600">
+              {`const HelloWorld = () => return &lt;div&gt;Hello, World!&lt;div&gt;`}
+            </h2> */}
+
+            <p className="text-2xl lg:text-4xl font-light lg:leading-snug lg:w-10/12">
+              I am a self-taught Software Developer currently residing in
+              Chattanooga, TN. I began coding in early 2020 and haven't looked
+              back since.
             </p>
+            <div
+              className="button flex max-w-max items-center text-3xl lg:text-5xl font-bold text-blue-600 mt-5 lg:mt-10 cursor-pointer hover:underline"
+              onClick={() =>
+                document
+                  .getElementById("projects")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <svg
+                className="svg transition-all duration-200 mr-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="white"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                width="50px"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15 13l-3 3m0 0l-3-3m3 3V8m0 13a9 9 0 110-18 9 9 0 010 18z"
+                />
+              </svg>
+
+              <div>See Projects</div>
+            </div>
           </article>
-          <div className="test-3  lg:w-1/2">
-            <img src="/space2.png" />
+          <div className="test-1 flex relative min-h-0 lg:h-4/5  z-10">
+            <div className="test-2 bg-gray-800 absolute w-2/5 h-3/6 text-pink-600">
+              <div className="bg-gray-700 h-6 md:h-8"></div>
+              <h2 className="px-1 md:pt-2 md:px-2 md:text-2xl leading-5"></h2>
+            </div>
+
+            <img className="test-3 mx-auto h-full z-0" src="/programmer2.svg" />
           </div>
         </section>
-        <div className="bg-gray-600 h-screen">
+        <section className="bg-blue-800 h-screen">
           ABOUT
-          <div id="about" className="mt-20">
-            About
-          </div>
-        </div>
-        <div className="bg-gray-600 h-screen">
+          <div id="about" className="mt-20"></div>
+        </section>
+        <section className="bg-gray-600 h-screen">
           projects
           <div id="projects" className="mt-20">
             projects
           </div>
-        </div>
+        </section>
       </div>
       <NavBar activeLink={activeLink} setActiveLink={setActiveLink} />
     </div>

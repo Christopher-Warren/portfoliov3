@@ -6,32 +6,35 @@ const NavItems = ({ activeLink }) => {
 
     // gets clicked element id
     // and scrolls to it
-    document.getElementById(e.target.text.toLowerCase())
-      ? document
-          .getElementById(e.target.text.toLowerCase())
-          .scrollIntoView({ behavior: "smooth" })
-      : console.log("404: Hash link doesn't exist");
+    // "home" scrolls to top
+    if (document.getElementById(e.target.text.toLowerCase()).id === "home") {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    } else if (document.getElementById(e.target.text.toLowerCase())) {
+      document
+        .getElementById(e.target.text.toLowerCase())
+        .scrollIntoView({ behavior: "smooth" });
+    }
   };
 
+  const textblue = "text-blue-600";
   return (
-    <div className="flex justify-between w-screen mx-5 lg:mx-48">
-      {/* 
-      SEE: onClick={handleLinkClick}
-            className={activeLink === 0 ? "text-blue-400" : ""}
-      @TODO extract nav links into standalone component
-      
-      */}
-
-      <ul className="flex items-center border border-red-400">
-        <li className="text-center px-2 ">Chris Warren</li>
+    <div className="flex justify-between lg:w-4/5 w-11/12 mx-auto">
+      <ul className="flex items-center">
+        <li className="p-2">
+          <h1 className={`text-5xl font-black pr-8 ${textblue}`}>CW</h1>
+        </li>
       </ul>
 
-      <ul className="sm:flex sm:items-center sm:text-4xl hidden font-bold border border-red-400 ">
+      <ul className="lg:flex lg:items-center sm:text-4xl hidden font-medium">
         <li className="px-2">
           <a
             href="#home"
             onClick={handleLinkClick}
-            className={activeLink === 0 ? "text-blue-400" : ""}
+            className={activeLink === 0 ? textblue : ""}
           >
             Home
           </a>
@@ -40,7 +43,7 @@ const NavItems = ({ activeLink }) => {
           <a
             href="#about"
             onClick={handleLinkClick}
-            className={activeLink === 1 ? "text-blue-400" : ""}
+            className={activeLink === 1 ? textblue : ""}
           >
             About
           </a>
@@ -49,13 +52,13 @@ const NavItems = ({ activeLink }) => {
           <a
             href="#projects"
             onClick={handleLinkClick}
-            className={activeLink === 2 ? "text-blue-400" : ""}
+            className={activeLink === 2 ? textblue : ""}
           >
             Projects
           </a>
         </li>
       </ul>
-      <NavModal />
+      <NavModal activeLink={activeLink} />
     </div>
   );
 };

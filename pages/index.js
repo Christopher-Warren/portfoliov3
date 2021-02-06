@@ -82,17 +82,13 @@ export default function Home() {
       <div className="h-screen sm:pt-20 pt-16">
         <section
           id="home"
-          className="test-1 h-full flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-4/5 w-11/12 mx-auto"
+          className="h-full flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-4/5 w-11/12 mx-auto"
         >
           <article className="lg:w-1/2 mb-4 md:mb-8 lg:mb-56">
             <h1 className="text-blue-600 text-5xl font-bold my-5 lg:my-10 lg:text-8xl">
               Christopher
               <br /> Warren
             </h1>
-
-            {/* <h2 className="hidden text-3xl text-red-600">
-              {`const HelloWorld = () => return &lt;div&gt;Hello, World!&lt;div&gt;`}
-            </h2> */}
 
             <p className="text-2xl lg:text-4xl font-light lg:leading-snug lg:w-10/12">
               I am a self-taught Software Developer currently residing in
@@ -126,23 +122,63 @@ export default function Home() {
               <div>See Projects</div>
             </div>
           </article>
-          <div className="test-1 flex relative min-h-0 lg:h-4/5  z-10">
-            <div className="test-2 bg-gray-800 absolute w-2/5 h-3/6 text-pink-600">
+          <div className="flex relative min-h-0 lg:h-4/5  z-10">
+            <div className=" bg-gray-800 absolute w-2/5 h-3/6 text-pink-600">
               <div className="bg-gray-700 h-6 md:h-8"></div>
               <h2 className="px-1 md:pt-2 md:px-2 md:text-2xl leading-5"></h2>
             </div>
 
-            <img className="test-3 mx-auto h-full z-0" src="/programmer2.svg" />
+            <img className="mx-auto h-full z-0" src="/programmer2.svg" />
           </div>
         </section>
-        <section className="bg-blue-800 h-screen">
-          ABOUT
-          <div id="about" className="mt-20"></div>
+        <div className="relative test-1 hidden lg:block">
+          <div className="absolute test-2 -my-28">
+            <img className="h-96" src="/sideill.svg" />
+          </div>
+        </div>
+        <section className="lg:w-4/5 w-11/12 mx-auto">
+          {/* pt-16 offsets the navbar height */}
+          <div id="about" className="pt-16">
+            <article className="">
+              <div className="relative test-1">
+                {/* <img className="absolute test-2" src="/about.svg" /> */}
+                <h1 className="text-blue-600 text-5xl lg:text-9xl font-bold my-5 lg:my-10 text-center ">
+                  About
+                </h1>
+              </div>
+
+              <p className="text-2xl lg:text-4xl font-light lg:leading-snug pt-7">
+                I began coding many years ago in a distant dojo, known to very
+                few. It wasn't long after that the shoulin showed me the way of
+                the web development ways.I began coding many years ago in a
+                distant dojo, known to very few. It wasn't long after that the
+                shoulin showed me the way of the web development ways.I began
+                coding many years ago in a distant dojo, known to very few. It
+                wasn't long after that the shoulin showed me the way of the web
+                development ways.
+              </p>
+            </article>
+          </div>
         </section>
-        <section className="bg-gray-600 h-screen">
-          projects
-          <div id="projects" className="mt-20">
-            projects
+        <div className="relative test-1 hidden lg:block">
+          <div className="absolute test-2 right-0 -my-28">
+            <img style={{ height: "30rem" }} src="/thinking-dude.svg" />
+          </div>
+        </div>
+        <section className="lg:w-4/5 w-11/12 mx-auto h-full">
+          {/* pt-16 offsets the navbar height */}
+          <div id="projects" className="pt-16">
+            <article className="relative">
+              <div className="relative test-1">
+                <h1 className="text-blue-600 text-5xl lg:text-9xl font-bold my-5 lg:my-10 text-center">
+                  Projects
+                </h1>
+              </div>
+
+              <p className="text-2xl lg:text-4xl font-light lg:leading-snug pt-7">
+                Projects go here
+              </p>
+            </article>
           </div>
         </section>
       </div>

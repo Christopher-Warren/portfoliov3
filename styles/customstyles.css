@@ -34,6 +34,10 @@ p {
   fill: rgba(37, 99, 235);
   transform: rotate(-0.25turn);
 }
+/* 
+.text-shadow {
+  text-shadow: 0px 0px rgba(37, 99, 235);
+} */
 
 /* .test-1 {
   border-width: 1px;
@@ -48,6 +52,10 @@ p {
   border-width: 1px;
   border-color: rgb(0, 255, 255);
 } */
+
+.side-image-flip {
+  transform: scale(-1, 1);
+}
 
 span {
   border-right: 0.05em solid;

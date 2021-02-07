@@ -35,23 +35,35 @@ p {
   transform: rotate(-0.25turn);
 }
 /* 
-.text-shadow {
-  text-shadow: 0px 0px rgba(37, 99, 235);
+.shadow-a-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
 } */
 
-/* .test-1 {
+.shadow-a-xl {
+  box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-a-xl2 {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  /* 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
+}
+
+.test-1 {
   border-width: 1px;
   border-color: rgb(255, 0, 255);
 }
 .test-2 {
   border-width: 1px;
-  border-color: rgb(255, 255, 0);
+  border-color: rgb(50, 212, 0);
 }
 
 .test-3 {
   border-width: 1px;
   border-color: rgb(0, 255, 255);
-} */
+}
 
 .side-image-flip {
   transform: scale(-1, 1);

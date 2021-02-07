@@ -131,8 +131,8 @@ export default function Home() {
             <img className="mx-auto h-full z-0" src="/programmer2.svg" />
           </div>
         </section>
-        <div className="relative test-1 hidden lg:block">
-          <div className="absolute test-2 -my-28">
+        <div className="relative hidden lg:block">
+          <div className="absolute  -my-28">
             <img className="h-96" src="/sideill.svg" />
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function Home() {
           {/* pt-16 offsets the navbar height */}
           <div id="about" className="pt-16">
             <article className="">
-              <div className="relative test-1">
+              <div className="relative ">
                 {/* <img className="absolute test-2" src="/about.svg" /> */}
                 <h1 className="text-blue-600 text-5xl lg:text-9xl font-bold my-5 lg:my-10 text-center ">
                   About
@@ -160,8 +160,8 @@ export default function Home() {
             </article>
           </div>
         </section>
-        <div className="relative test-1 hidden lg:block">
-          <div className="absolute test-2 right-0 -my-28">
+        <div className="relative hidden lg:block">
+          <div className="absolute right-0 -my-28">
             <img style={{ height: "30rem" }} src="/thinking-dude.svg" />
           </div>
         </div>
@@ -169,15 +169,22 @@ export default function Home() {
           {/* pt-16 offsets the navbar height */}
           <div id="projects" className="pt-16">
             <article className="relative">
-              <div className="relative test-1">
-                <h1 className="text-blue-600 text-5xl lg:text-9xl font-bold my-5 lg:my-10 text-center">
+              <div className="flex justify-center">
+                <h1 className=" text-blue-600 text-5xl lg:text-9xl font-bold my-5 lg:my-10 text-center">
                   Projects
                 </h1>
               </div>
-
-              <p className="text-2xl lg:text-4xl font-light lg:leading-snug pt-7">
-                Projects go here
-              </p>
+              {/* Remove fixed height */}
+              <div className="w-full h-full mt-10 ">
+                <div className="lg:flex lg:flex-wrap">
+                  <div className="flex lg:justify-start relative mb-20 shadow-a-xl lg:w-1/3 h-96">
+                    <img
+                      src="https://www.chriswarren.tech/img/projects/dev-apparel.png"
+                      className="absolute w-8/12  ml-8 -mt-8 shadow-a-xl2 object-cover object-top"
+                    />
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
         </section>

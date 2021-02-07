@@ -174,14 +174,27 @@ export default function Home() {
                   Projects
                 </h1>
               </div>
-              {/* Remove fixed height */}
-              <div className="w-full h-full mt-10 ">
-                <div className="lg:flex lg:flex-wrap">
-                  <div className="flex lg:justify-start relative mb-20 shadow-a-xl lg:w-1/3 h-96">
+
+              {/* <div className="w-full h-full mt-10">
+                <div className="lg:flex lg:flex-wrap test-2">
+                  <div className="mb-20 shadow-a-xl lg:w-1/3 h-96 w-full inline-block px-10">
                     <img
                       src="https://www.chriswarren.tech/img/projects/dev-apparel.png"
-                      className="absolute w-8/12  ml-8 -mt-8 shadow-a-xl2 object-cover object-top"
+                      className="w-8/12 h-3/6 -mt-8 mx-4 shadow-a-xl2 object-cover object-top"
                     />
+                  </div>
+                </div>
+              </div> */}
+
+              <div className="w-full h-full mt-10">
+                <div className="lg:flex lg:flex-wrap test-2">
+                  <div className="lg:w-1/3 test-1 px-5">
+                    <div className="shadow-a-xl h-96 w-full inline-block ">
+                      <img
+                        src="https://www.chriswarren.tech/img/projects/dev-apparel.png"
+                        className="w-8/12 h-3/6 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

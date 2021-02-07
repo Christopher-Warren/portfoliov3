@@ -51,7 +51,7 @@ p {
   /* 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
 }
 
-.test-1 {
+/* .test-1 {
   border-width: 1px;
   border-color: rgb(255, 0, 255);
 }
@@ -63,7 +63,7 @@ p {
 .test-3 {
   border-width: 1px;
   border-color: rgb(0, 255, 255);
-}
+} */
 
 .side-image-flip {
   transform: scale(-1, 1);

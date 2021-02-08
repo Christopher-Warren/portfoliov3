@@ -181,7 +181,7 @@ export default function Home() {
                   <div className="lg:w-1/3 test-1 px-5">
                     <div className="relative shadow-a-xl h-96 w-full inline-block">
                       {/* Buttons */}
-                      <div className="test-2 absolute md:w-2/12 w-1/12 right-0 -mr-4 text-center">
+                      <div className="test-2 absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
                         <div className="relative p-2 shadow-md mb-5 mt-3 bg-gray-500 text-white rounded-l rounded-tr text-lg  cursor-pointer">
                           <div className="font-mono text-lg test-1">Source</div>
 

@@ -174,26 +174,41 @@ export default function Home() {
                   Projects
                 </h1>
               </div>
-
-              {/* <div className="w-full h-full mt-10">
-                <div className="lg:flex lg:flex-wrap test-2">
-                  <div className="mb-20 shadow-a-xl lg:w-1/3 h-96 w-full inline-block px-10">
-                    <img
-                      src="https://www.chriswarren.tech/img/projects/dev-apparel.png"
-                      className="w-8/12 h-3/6 -mt-8 mx-4 shadow-a-xl2 object-cover object-top"
-                    />
-                  </div>
-                </div>
-              </div> */}
-
+              {/* Flex Container */}
               <div className="w-full h-full mt-10">
                 <div className="lg:flex lg:flex-wrap test-2">
+                  {/* Flex Items */}
                   <div className="lg:w-1/3 test-1 px-5">
-                    <div className="shadow-a-xl h-96 w-full inline-block ">
+                    <div className="relative shadow-a-xl h-96 w-full inline-block">
+                      {/* Buttons */}
+                      <div className="test-2 absolute md:w-2/12 w-1/12 right-0 -mr-4 text-center">
+                        <div className="relative p-2 shadow-md mb-5 mt-3 bg-gray-500 text-white rounded-l rounded-tr text-lg  cursor-pointer">
+                          <div className="font-mono text-lg test-1">Source</div>
+
+                          <div className="source-arrow absolute right-0 mt-2 "></div>
+                        </div>
+                        <div className="relative p-2 shadow-md mb-5 mt-3 bg-blue-500 text-white rounded-l rounded-tr text-lg  cursor-pointer">
+                          <div className="font-mono text-lg test-1">Live</div>
+
+                          <div className="live-arrow absolute right-0 mt-2 "></div>
+                        </div>
+                      </div>
+
+                      {/* ^^^ Buttons ^^^ */}
                       <img
                         src="https://www.chriswarren.tech/img/projects/dev-apparel.png"
-                        className="w-8/12 h-3/6 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top"
+                        className="w-8/12 h-3/6 -my-5 ml-5  shadow-a-xl2 object-cover object-left-top test-3"
                       />
+
+                      <div className="mt-5 p-3 text-gray-800">
+                        <h1 className="text-4xl font-semibold py-2">
+                          Dev-Apparel
+                        </h1>
+                        <p className="text-xl font-light">
+                          Dev-Apparel is a mock E-Commerce site that utilizes
+                          CRUD operations, filters, and unique product pathing.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

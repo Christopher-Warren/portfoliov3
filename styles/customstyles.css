@@ -65,6 +65,21 @@ p {
   border-color: rgb(0, 255, 255);
 } */
 
+.source-arrow {
+  display: inline-block;
+  border-top: 1rem solid rgba(55, 65, 81, 1);
+  border-right: 1rem solid transparent;
+}
+.live-arrow {
+  display: inline-block;
+  border-top: 1rem solid rgba(29, 78, 216, 1);
+  border-right: 1rem solid transparent;
+}
+
+.-z-10 {
+  z-index: -10;
+}
+
 .side-image-flip {
   transform: scale(-1, 1);
 }

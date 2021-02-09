@@ -178,7 +178,7 @@ export default function Home() {
               <div className="w-full h-full mt-10">
                 <div className="lg:flex lg:flex-wrap">
                   {/* Flex Items */}
-                  <div className="lg:w-1/3 test-1 px-5 mb-20">
+                  <div className="lg:w-1/3 test-1 px-3 mb-20">
                     <div className="relative shadow-a-xl w-full inline-block">
                       {/* Buttons */}
                       <div className="test-2 absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
@@ -208,16 +208,14 @@ export default function Home() {
                         <h1 className="text-4xl font-semibold py-2">
                           Dev-Apparel
                         </h1>
-                        <p className="text-xl leading-tight font-light">
+                        <p className="text-xl leading-tight font-light overflow-y-auto h-32">
                           Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters,Dev-Apparel is a mock
-                          E-Commerce site that utilizes CRUD operations,
-                          filters, and unique product pathing. Dev-Apparel is a
-                          mock E-Commerce site that utilizes CRUD operations,
-                          filters, and unique product pathing.Dev-Apparel is a
-                          mock E-Commerce site that utiliz
+                          CRUD operations, filters, and unique product
+                          pathing.Dev-Apparel is a mock E-Commerce site that
+                          utilizes CRUD operations, filters, and unique product
+                          pathing.Dev-Apparel is a mock E-Commerce site that
+                          utilizes CRUD operations, filters, and unique product
+                          pathing.
                         </p>
                       </div>
                       <ul className="flex px-4 py-2 flex-wrap">
@@ -239,28 +237,11 @@ export default function Home() {
                         <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
                           Tailwind
                         </li>
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
-                        </li>
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
-                        </li>
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
-                        </li>
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
-                        </li>
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
-                        </li>
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
-                        </li>
                       </ul>
                     </div>
                   </div>
-                  <div className="lg:w-1/3 test-1 px-5">
+                  {/* CARD */}
+                  <div className="lg:w-1/3 test-1 px-3 mb-20">
                     <div className="relative shadow-a-xl w-full inline-block">
                       {/* Buttons */}
                       <div className="test-2 absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
@@ -290,121 +271,18 @@ export default function Home() {
                         <h1 className="text-4xl font-semibold py-2">
                           Dev-Apparel
                         </h1>
-                        <p className="text-xl leading-tight font-light">
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
+                        <p className="text-xl leading-tight font-light overflow-y-auto">
                           Dev-Apparel is a mock E-Commerce site that utilizes
                           CRUD operations, filters, and unique product
-                          pathing.Dev-Apparel is a mock E-Commerce site that
-                          utilizes CRUD operations, filters, and unique product
-                          pathing. Dev-Apparel is a mock E-Commerce site that
-                          utilizes CRUD operations, filters, and unique product
-                          pathing.Dev-Apparel is a mock E-Commerce site that
-                          utilizes CRUD operations, filters, and unique product
-                          pathing. Dev-Apparel is a mock E-Commerce site that
-                          utilizes CRUD operations, filters, and unique product
-                          pathing.
+                          pathing...
                         </p>
                       </div>
-                      <ul className="flex px-4 py-2 flex-wrap">
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="lg:w-1/3 test-1 px-5">
-                    <div className="relative shadow-a-xl w-full inline-block">
-                      {/* Buttons */}
-                      <div className="test-2 absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
-                        <div className="relative p-2 shadow-md mb-5 mt-3 bg-gray-500 text-white rounded-l rounded-tr text-lg  cursor-pointer">
-                          <div className="font text-lg font-medium test-1">
-                            Source
-                          </div>
-
-                          <div className="source-arrow absolute right-0 mt-2 "></div>
-                        </div>
-                        <div className="relative p-2 shadow-md mb-5 mt-3 bg-blue-500 text-white rounded-l rounded-tr text-lg  cursor-pointer">
-                          <div className="font text-lg font-medium test-1">
-                            Live
-                          </div>
-
-                          <div className="live-arrow absolute right-0 mt-2 "></div>
-                        </div>
-                      </div>
-
-                      {/* ^^^ Buttons ^^^ */}
-                      <img
-                        src="https://www.chriswarren.tech/img/projects/dev-apparel.png"
-                        className="w-8/12 lg:w-9/12 h-3/6 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top test-3 rounded-md"
-                      />
-
-                      <div className="mt-5 pt-5 px-5 text-gray-800">
-                        <h1 className="text-4xl font-semibold py-2">
-                          Dev-Apparel
-                        </h1>
-                        <p className="text-xl leading-tight font-light">
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                        </p>
-                      </div>
-                      <ul className="flex px-4 py-2 flex-wrap">
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="lg:w-1/3 test-1 px-5">
-                    <div className="relative shadow-a-xl w-full inline-block">
-                      {/* Buttons */}
-                      <div className="test-2 absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
-                        <div className="relative p-2 shadow-md mb-5 mt-3 bg-gray-500 text-white rounded-l rounded-tr text-lg  cursor-pointer">
-                          <div className="font text-lg font-medium test-1">
-                            Source
-                          </div>
-
-                          <div className="source-arrow absolute right-0 mt-2 "></div>
-                        </div>
-                        <div className="relative p-2 shadow-md mb-5 mt-3 bg-blue-500 text-white rounded-l rounded-tr text-lg  cursor-pointer">
-                          <div className="font text-lg font-medium test-1">
-                            Live
-                          </div>
-
-                          <div className="live-arrow absolute right-0 mt-2 "></div>
-                        </div>
-                      </div>
-
-                      {/* ^^^ Buttons ^^^ */}
-                      <img
-                        src="https://www.chriswarren.tech/img/projects/dev-apparel.png"
-                        className="w-8/12 lg:w-9/12 h-3/6 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top test-3 rounded-md"
-                      />
-
-                      <div className="mt-5 pt-5 px-5 text-gray-800">
-                        <h1 className="text-4xl font-semibold py-2">
-                          Dev-Apparel
-                        </h1>
-                        <p className="text-xl leading-tight font-light">
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                          Dev-Apparel is a mock E-Commerce site that utilizes
-                          CRUD operations, filters, and unique product pathing.
-                        </p>
-                      </div>
-                      <ul className="flex px-4 py-2 flex-wrap">
-                        <li className="inline rounded-full bg-blue-500 text-white font-medium px-2 py-1 m-1">
-                          Bootstrap
+                      <ul className="flex px-4 py-2 flex-wrap justify-end">
+                        <li
+                          onClick=""
+                          className="text-blue-600 border border-current rounded-md font-medium px-2 py-1 m-1"
+                        >
+                          More info
                         </li>
                       </ul>
                     </div>

@@ -70,7 +70,7 @@ const Hero = () => {
           since.
         </p>
         <div
-          className="button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600 mt-5 lg:mt-10 cursor-pointer "
+          className="hero-button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600 mt-5 lg:mt-10 cursor-pointer "
           onClick={() =>
             document
               .getElementById("projects")

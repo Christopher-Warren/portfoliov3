@@ -28,20 +28,26 @@ div {
     0 0 0px rgba(30, 132, 242, 0.84), 0 0 0px rgba(30, 132, 242, 0.88);
 }
 
-.button:hover .svg {
+.hero-button:hover .svg {
   color: white;
   fill: rgba(37, 99, 235);
-  transform: rotate(-0.25turn);
+  transform: rotate(-0.25turn) scale(1.2);
 }
 
 .info-svg {
   transform: rotate(-0.25turn);
+  /* transform: scale(1.2); */
 }
 
 .info-button:hover .info-svg {
   color: white;
   fill: rgba(37, 99, 235);
+  transform: scale(1.2) rotate(-0.25turn);
   /* width: 40px; */
+}
+
+.modal-button:hover .modal-svg {
+  transform: scale(1.2);
 }
 
 /* 
@@ -61,7 +67,7 @@ div {
   /* 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
 }
 
-.test-1 {
+/* .test-1 {
   border-width: 1px;
   border-color: rgb(255, 0, 255);
 }
@@ -73,7 +79,7 @@ div {
 .test-3 {
   border-width: 1px;
   border-color: rgb(0, 255, 255);
-}
+} */
 
 .source-arrow {
   display: inline-block;

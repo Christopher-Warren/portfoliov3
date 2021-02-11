@@ -14,13 +14,8 @@ p {
   font-family: "Ubuntu", sans-serif;
 }
 
-.font {
+div {
   font-family: "Ubuntu", sans-serif;
-}
-
-.glow-md {
-  /* box-shadow: rgba(186, 186, 190, 0.2) 0px 4px 18px 0px; */
-  box-shadow: rgba(255, 255, 255, 0.11) 0px 0px 20px;
 }
 
 .transition-height {
@@ -38,6 +33,17 @@ p {
   fill: rgba(37, 99, 235);
   transform: rotate(-0.25turn);
 }
+
+.info-svg {
+  transform: rotate(-0.25turn);
+}
+
+.info-button:hover .info-svg {
+  color: white;
+  fill: rgba(37, 99, 235);
+  /* width: 40px; */
+}
+
 /* 
 .shadow-a-xl {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
@@ -84,10 +90,15 @@ p {
   z-index: -10;
 }
 
-.side-image-flip {
-  transform: scale(-1, 1);
+.truncate-multi {
+  display: -webkit-box;
+  max-width: auto;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
+/* Typing animation CSS */
 span {
   border-right: 0.05em solid;
   animation: caret 1s steps(1) infinite;

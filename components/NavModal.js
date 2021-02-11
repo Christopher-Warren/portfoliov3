@@ -18,7 +18,7 @@ export default function NavModal({ activeLink }) {
     // gets clicked element id
     // and scrolls to it
     // "home" scrolls to top
-    console.log(document.getElementById(e.target.text.toLowerCase()).id);
+
     if (document.getElementById(e.target.text.toLowerCase()).id === "home") {
       window.scroll({
         top: 0,

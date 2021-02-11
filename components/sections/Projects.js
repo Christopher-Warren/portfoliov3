@@ -49,6 +49,24 @@ const Projects = () => {
       liveURL: "https://dev-apparel.vercel.app/",
       sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
     },
+    {
+      id: 1,
+      name: "food makers",
+      about:
+        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
+      imageURL: "https://www.chriswarren.tech/img/projects/dev-apparel.png",
+      liveURL: "https://dev-apparel.vercel.app/",
+      sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
+    },
+    {
+      id: 1,
+      name: "food makers",
+      about:
+        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
+      imageURL: "https://www.chriswarren.tech/img/projects/dev-apparel.png",
+      liveURL: "https://dev-apparel.vercel.app/",
+      sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
+    },
   ];
 
   const renderProjects = projects.map((project, index) => {
@@ -83,7 +101,8 @@ const Projects = () => {
             <h1 className="lg:text-4xl text-2xl font-semibold py-2">
               {project.name}
             </h1>
-            <p className="lg:text-xl text-lg font-light text-gray-700 leading-6  truncate-multi mb-4">
+            {/* lg:h-28 ensures all cards are same height on lg screens */}
+            <p className="lg:text-xl text-lg font-light text-gray-700 leading-6 lg:h-28 truncate-multi mb-4">
               {project.about}
             </p>
             <div

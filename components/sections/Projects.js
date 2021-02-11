@@ -53,20 +53,20 @@ const Projects = () => {
 
   const renderProjects = projects.map((project, index) => {
     return (
-      <div className="lg:w-1/3 test-1 px-3 mb-20" key={project.id}>
+      <div className="lg:w-1/3 px-3 mb-20" key={project.id}>
         <div className="relative shadow-a-xl w-full inline-block">
           {/* vvv Source/Live vvv */}
-          <div className="test-2 absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
+          <div className="absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
             <a href={project.sourceURL}>
-              <div className="relative p-2 shadow-md mb-5 mt-3 bg-gray-500 text-white rounded-l rounded-tr text-lg">
-                <div className="font text-lg font-medium test-1">Source</div>
+              <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-gray-600 transition-colors bg-gray-500 text-white rounded-l rounded-tr text-lg">
+                <div className="font text-lg font-medium ">Source</div>
 
                 <div className="source-arrow absolute right-0 mt-2 "></div>
               </div>
             </a>
             <a href={project.liveURL}>
-              <div className="relative p-2 shadow-md mb-5 mt-3 bg-blue-500 text-white rounded-l rounded-tr text-lg">
-                <div className="font text-lg font-medium test-1">Live</div>
+              <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-blue-600 transition-colors bg-blue-500 text-white rounded-l rounded-tr text-lg">
+                <div className="font text-lg font-medium">Live</div>
 
                 <div className="live-arrow absolute right-0 mt-2 "></div>
               </div>
@@ -76,7 +76,7 @@ const Projects = () => {
           {/* ^^^ Source/Live ^^^ */}
           <img
             src={project.imageURL}
-            className="w-8/12 lg:w-9/12 h-3/6 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top test-3 rounded-md"
+            className="w-8/12 lg:w-9/12 h-3/6 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md"
           />
 
           <div className="mt-5 py-3 px-5 text-gray-800">

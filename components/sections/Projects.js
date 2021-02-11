@@ -133,7 +133,7 @@ const Projects = () => {
             modal ? "right-0" : "right-full"
           } transition-all duration-200 z-30`}
         >
-          <div className="mx-5 h-screen relative test-3">
+          <div className="mx-5 h-screen relative">
             <div
               onClick={handleModal}
               className="w-min mx-auto text-red-400 modal-button"
@@ -159,7 +159,7 @@ const Projects = () => {
               className=" mx-auto lg:h-2/5 rounded-lg object-contain object-top shadow-a-xl"
               src={selectedProject && selectedProject.imageURL}
             ></img>
-            <div className="test-2 fit test-3 mx-auto lg:w-4/6">
+            <div className="fit mx-auto lg:w-4/6">
               <div className="">
                 <h1 className="justify-self-start text-blue-600 text-5xl lg:text-5xl font-bold text-center my-5">
                   {selectedProject && selectedProject.name}
@@ -169,9 +169,9 @@ const Projects = () => {
                 </p>
               </div>
 
-              <div className="flex absolute bottom-0 left-0 mb-5 lg:mb-14 test-2 justify-center w-full font-semibold lg:text-4xl text-2xl text-gray-800 tracking-wide">
+              <div className="flex absolute bottom-0 left-0 mb-5 lg:mb-14 justify-center w-full font-semibold lg:text-4xl text-2xl text-gray-800 tracking-wide">
                 <a href={selectedProject && selectedProject.liveURL}>
-                  <div className="modal-button flex test-1 px-5 cursor-pointer">
+                  <div className="modal-button flex px-5 cursor-pointer">
                     <svg
                       className="lg:w-12 w-8 modal-svg  transition-all duration-200"
                       xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +184,7 @@ const Projects = () => {
                   </div>
                 </a>
                 <a href={selectedProject && selectedProject.sourceURL}>
-                  <div className="modal-button flex test-1 px-5 cursor-pointer">
+                  <div className="modal-button flex px-5 cursor-pointer">
                     <svg
                       className=" lg:w-12 w-8 modal-svg  transition-all duration-200"
                       xmlns="http://www.w3.org/2000/svg"

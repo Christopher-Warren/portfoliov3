@@ -26,7 +26,7 @@ const Projects = () => {
       id: 0,
       name: "Dev-Apparel",
       about:
-        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
+        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart,",
       imageURL: "https://www.chriswarren.tech/img/projects/dev-apparel.png",
       liveURL: "https://dev-apparel.vercel.app/",
       sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
@@ -114,8 +114,37 @@ const Projects = () => {
             modal ? "right-0" : "right-full"
           } transition-all z-30`}
         >
-          <h1>{selectedProject && selectedProject.name}</h1>
-          <button onClick={handleModal}>Close</button>
+          <div className="mx-5 h-screen">
+            <div onClick={handleModal} className="w-min mx-auto text-red-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                width="120px"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+
+            <img
+              className=" mx-auto lg:h-2/5 rounded-lg object-contain object-top shadow-a-xl"
+              src={selectedProject && selectedProject.imageURL}
+            ></img>
+            <div className="h-96 mx-auto test-1 lg:w-5/6">
+              <h1 className=" text-blue-600 text-5xl lg:text-5xl font-bold text-center my-5">
+                {selectedProject && selectedProject.name}
+              </h1>
+              <p className="text-lg leading-tight lg:text-3xl font-light">
+                {selectedProject && selectedProject.about}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     );

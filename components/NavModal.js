@@ -33,7 +33,7 @@ export default function NavModal({ activeLink }) {
     // closes modal after clicking link
     handleNavModal();
   };
-  console.log(activeLink);
+
   return (
     <div className="flex w-full lg:hidden justify-end items-center">
       <ul className=" text-blue-600">
@@ -109,6 +109,15 @@ export default function NavModal({ activeLink }) {
               onClick={handleLinkClick}
             >
               Projects
+            </a>
+          </li>
+          <li className="px-2 py-2">
+            <a
+              className={activeLink === 2 ? "text-blue-600" : ""}
+              href="#projects"
+              onClick={handleLinkClick}
+            >
+              Contact
             </a>
           </li>
         </ul>

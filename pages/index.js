@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
+import Contact from "../components/sections/Contact";
 
 export default function Home() {
   const [activeLink, setActiveLink] = useState(0);
@@ -16,7 +17,8 @@ export default function Home() {
         <title>
           {(activeLink === 0 && "Home") ||
             (activeLink === 1 && "About") ||
-            (activeLink === 2 && "Projects")}{" "}
+            (activeLink === 2 && "Projects") ||
+            (activeLink === 3 && "Contact")}{" "}
           | Christopher Warren
         </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -43,8 +45,11 @@ export default function Home() {
           </div>
         </div>
         <Projects />
+
+        <Contact />
       </div>
       <NavBar activeLink={activeLink} setActiveLink={setActiveLink} />
+      <footer className="h-20 w-full bg-green-600 mt-20"></footer>
     </div>
   );
 }

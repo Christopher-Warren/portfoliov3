@@ -17,6 +17,7 @@ const NavBar = ({ activeLink, setActiveLink }) => {
     if (isInViewport(document.getElementById("home"))) setActiveLink(0);
     if (isInViewport(document.getElementById("about"))) setActiveLink(1);
     if (isInViewport(document.getElementById("projects"))) setActiveLink(2);
+    if (isInViewport(document.getElementById("contact"))) setActiveLink(3);
   };
 
   useEffect(() => {

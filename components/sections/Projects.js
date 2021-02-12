@@ -41,7 +41,7 @@ const Projects = () => {
       sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
     },
     {
-      id: 1,
+      id: 2,
       name: "food makers",
       about:
         "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
@@ -50,7 +50,7 @@ const Projects = () => {
       sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
     },
     {
-      id: 1,
+      id: 3,
       name: "food makers",
       about:
         "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
@@ -59,7 +59,7 @@ const Projects = () => {
       sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
     },
     {
-      id: 1,
+      id: 4,
       name: "food makers",
       about:
         "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
@@ -205,13 +205,13 @@ const Projects = () => {
   });
 
   return (
-    <section className="lg:w-4/5 w-11/12 mx-auto h-full">
+    <section className="lg:w-4/5 w-11/12 mx-auto h-full test-1">
       {/* pt-16 offsets the navbar height */}
       <div className="pt-16">
         <article className="relative">
-          <div className="flex justify-center">
+          <div className="">
             <h1
-              className=" text-blue-600 text-5xl lg:text-9xl font-bold my-5 lg:my-10 text-center"
+              className=" text-blue-600 text-5xl lg:text-9xl font-bold my-5 lg:my-10 lg:mb-20 text-center"
               id="projects"
             >
               Projects

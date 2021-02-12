@@ -13,7 +13,7 @@ class MyDocument extends Document {
         <body className="bg-white ">
           <link rel="icon" type="image/png" href="/favicon.png" />
           <meta
-            http-equiv="ScreenOrientation"
+            httpEquiv="ScreenOrientation"
             content="autoRotate:disabled"
           ></meta>
           <Main />

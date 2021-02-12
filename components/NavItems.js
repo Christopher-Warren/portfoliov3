@@ -57,6 +57,15 @@ const NavItems = ({ activeLink }) => {
             Projects
           </a>
         </li>
+        <li className="px-2">
+          <a
+            href="#projects"
+            onClick={handleLinkClick}
+            className={activeLink === 3 ? textblue : ""}
+          >
+            Contact
+          </a>
+        </li>
       </ul>
       <NavModal activeLink={activeLink} />
     </div>

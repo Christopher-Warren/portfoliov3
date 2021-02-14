@@ -205,7 +205,7 @@ const Projects = () => {
   });
 
   return (
-    <section className="lg:w-4/5 w-11/12 mx-auto h-full test-1">
+    <section className="lg:w-4/5 w-11/12 mx-auto h-full ">
       {/* pt-16 offsets the navbar height */}
       <div className="pt-16">
         <article className="relative">

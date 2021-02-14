@@ -4,6 +4,8 @@ export default async function contactAPI(req, res) {
   var errObj;
   var successObj;
 
+  // need to handle error if pw/un are incorrect
+
   try {
     async function sendMail() {
       let transporter = nodemailer.createTransport({
@@ -11,8 +13,8 @@ export default async function contactAPI(req, res) {
         port: 587,
         secure: false, // upgrade later with STARTTLS
         auth: {
-          user: process.env.NODEMAILER_EMAIL,
-          pass: process.env.NODEMAILER_PASSWORD,
+          user: "chris@chriswarren.tech",
+          pass: "Thbyrnq)o6",
         },
         tls: {
           secureProtocol: "TLSv1_method",

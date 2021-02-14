@@ -18,17 +18,6 @@ const Contact = () => {
     console.log(data);
   };
 
-  //   useEffect(() => {
-  //     const getData = async () => {
-  //       const { data } = await axios.get("/api/test");
-  //       console.log(data);
-  //     };
-  //     getData();
-  //     return () => {
-  //       //nothing
-  //     };
-  //   }, []);
-
   return (
     <div id="contact" className=" w-11/12 lg:w-4/5 mx-auto">
       <div className="">
@@ -39,11 +28,11 @@ const Contact = () => {
           Contact
         </h1>
       </div>
-      <div className="w-full h-96 rounded shadow-lg bg-gray-700">
+      <div className="w-full h-96 rounded shadow-a-xl ">
         <form onSubmit={(e) => handleSubmit(e)}>
           <label htmlFor="name">name: </label>
           <input
-            className="rounded"
+            className="rounded bg-gray-200 text-4xl"
             type="text"
             name="name"
             value={name}

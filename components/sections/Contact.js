@@ -30,7 +30,9 @@ const Contact = () => {
       </div>
       <div className="w-full h-96 rounded shadow-a-xl ">
         <form onSubmit={(e) => handleSubmit(e)}>
-          <label htmlFor="name">name: </label>
+          <label className="absolute" htmlFor="name">
+            name:{" "}
+          </label>
           <input
             className="rounded bg-gray-200 text-4xl"
             type="text"

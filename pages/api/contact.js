@@ -13,8 +13,8 @@ export default async function contactAPI(req, res) {
         port: 587,
         secure: false, // upgrade later with STARTTLS
         auth: {
-          user: "chris@chriswarren.tech",
-          pass: "Thbyrnq)o6",
+          user: process.env.NODEMAILER_EMAIL,
+          pass: process.env.NODEMAILER_PASSWORD,
         },
         tls: {
           secureProtocol: "TLSv1_method",

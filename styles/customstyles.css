@@ -50,6 +50,17 @@ div {
   transform: scale(1.2);
 }
 
+.name-input:focus + .name-label {
+  font-size: 1.2rem;
+  line-height: 1.25rem;
+  padding-bottom: 2.25rem;
+}
+.name-input:focus {
+  outline-color: rgba(0, 255, 255, 0);
+  outline-style: solid;
+  box-shadow: 0 0 0 3pt rgb(147, 197, 253);
+}
+
 /* 
 .shadow-a-xl {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
@@ -67,7 +78,7 @@ div {
   /* 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
 }
 
-.test-1 {
+/* .test-1 {
   border-width: 1px;
   border-color: rgb(255, 0, 255);
 }
@@ -79,7 +90,7 @@ div {
 .test-3 {
   border-width: 1px;
   border-color: rgb(0, 255, 255);
-}
+} */
 
 .source-arrow {
   display: inline-block;

@@ -28,20 +28,57 @@ const Contact = () => {
           Contact
         </h1>
       </div>
-      <div className="w-full h-96 rounded shadow-a-xl ">
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <label className="absolute" htmlFor="name">
-            name:{" "}
-          </label>
-          <input
-            className="rounded bg-gray-200 text-4xl"
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+      <div className="w-full h-96 rounded shadow-a-xl p-10 ">
+        <form onSubmit={(e) => handleSubmit(e)} className="flex flex-wrap">
+          <div className="relative test-1 w-1/2 pr-5 lg:pr-10">
+            <input
+              className="rounded bg-gray-200 text-3xl name-input focus:border-gray-900 pt-5 px-4 pb-2 w-full"
+              type="text"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label
+              className="absolute name-label text-4xl left-2 bottom-2 transition-all px-2 pb-1 text-gray-600"
+              htmlFor="name"
+            >
+              Name{" "}
+            </label>
+          </div>
+          <div className="relative test-1 w-1/2 ">
+            <input
+              className="rounded bg-gray-200 text-3xl name-input focus:border-gray-900 pt-5 px-4 pb-2 w-full"
+              type="text"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label
+              className="absolute name-label text-4xl left-2 bottom-2 transition-all px-2 pb-1 text-gray-600"
+              htmlFor="name"
+            >
+              Name{" "}
+            </label>
+          </div>
 
-          <label htmlFor="email">email: </label>
+          <div className="relative test-1 w-full mt-10">
+            <textarea
+              className="rounded bg-gray-200 text-3xl name-input focus:border-gray-900 pt-8 px-4 pb-2 w-full"
+              type="text"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              rows="4"
+              disabled="true"
+            />
+            <label
+              className="absolute name-label text-4xl left-2 top-2 transition-all px-2 text-gray-600"
+              htmlFor="name"
+            >
+              Name{" "}
+            </label>
+          </div>
+          {/* <label htmlFor="email">email: </label>
           <input
             className="rounded"
             type="text"
@@ -57,9 +94,13 @@ const Contact = () => {
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-          />
+          /> */}
 
-          <input type="submit" value="Send Message"></input>
+          <input
+            className="bg-blue-300"
+            type="submit"
+            value="Send Message"
+          ></input>
         </form>
       </div>
     </div>

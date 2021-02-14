@@ -9,7 +9,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data } = await axios.post("/api/sendpulse", {
+    const { data } = await axios.post("/api/contact", {
       name: name,
       email: email,
       message: message,

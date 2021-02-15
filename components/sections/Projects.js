@@ -72,7 +72,7 @@ const Projects = () => {
   const renderProjects = projects.map((project, index) => {
     return (
       <div className="lg:w-1/3 px-3 mb-20" key={project.id}>
-        <div className="relative shadow-a-xl w-full inline-block">
+        <div className="relative shadow-a-xl w-full inline-block bg-white">
           {/* vvv Source/Live vvv */}
           <div className="absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
             <a href={project.sourceURL}>
@@ -209,16 +209,13 @@ const Projects = () => {
       {/* pt-16 offsets the navbar height */}
       <div className="pt-16">
         <article className="relative">
-          <div className="">
-            <h1
-              className=" text-blue-600 text-5xl lg:text-9xl font-bold my-5 lg:my-10 lg:mb-20 text-center"
-              id="projects"
-            >
+          <div className="" id="projects">
+            <h1 className=" text-blue-600 text-6xl lg:text-9xl font-bold lg:mb-28 mb-16  text-center">
               Projects
             </h1>
           </div>
           {/* Flex Container */}
-          <div className="w-full h-full mt-10">
+          <div className="w-full h-full">
             <div className="lg:flex lg:flex-wrap">
               {/* Flex Items */}
               {renderProjects}

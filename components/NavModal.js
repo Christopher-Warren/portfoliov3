@@ -113,7 +113,7 @@ export default function NavModal({ activeLink }) {
           </li>
           <li className="px-2 py-2">
             <a
-              className={activeLink === 2 ? "text-blue-600" : ""}
+              className={activeLink === 3 ? "text-blue-600" : ""}
               href="#projects"
               onClick={handleLinkClick}
             >

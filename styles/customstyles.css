@@ -53,12 +53,14 @@ div {
 .name-input:focus + .name-label {
   font-size: 1.2rem;
   line-height: 1.25rem;
-  padding-bottom: 2.25rem;
+  padding-bottom: 2rem;
 }
 .name-input:focus {
   outline-color: rgba(0, 255, 255, 0);
   outline-style: solid;
-  box-shadow: 0 0 0 3pt rgb(147, 197, 253);
+
+  outline-width: 1px;
+  box-shadow: 0 0 0 3px rgb(147, 197, 253);
 }
 
 /* 
@@ -71,6 +73,11 @@ div {
 .shadow-a-xl {
   box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-a-lg {
+  box-shadow: 0 2px 15px 5px rgba(0, 0, 0, 0.15);
+  /* 0 10px 10px -5px rgba(0, 0, 0, 0.04); */
 }
 
 .shadow-a-xl2 {
@@ -91,6 +98,10 @@ div {
   border-width: 1px;
   border-color: rgb(0, 255, 255);
 } */
+
+.contact-button:hover {
+  width: 100%;
+}
 
 .source-arrow {
   display: inline-block;

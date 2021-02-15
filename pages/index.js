@@ -31,7 +31,7 @@ export default function Home() {
       </Head>
       {/* pt-20 offsets size of NavBar */}
 
-      <div className=" sm:mt-20 mt-16">
+      <div className=" sm:mt-20 mt-16 ">
         <Hero />
         <div className="relative hidden lg:block">
           <div className="absolute -my-28">
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
         <About />
         <div className="relative hidden lg:block">
-          <div className="absolute right-0 -my-28">
+          <div className="absolute right-0 -my-28 -z-10">
             <img style={{ height: "30rem" }} src="/thinking-dude.svg" />
           </div>
         </div>

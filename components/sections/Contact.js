@@ -30,47 +30,52 @@ const Contact = () => {
       </div>
       <div className="relative w-full  rounded shadow-a-xl px-5 lg:px-10 pb-10 p-14 flex">
         <div className="absolute top-0 left-0 mx-5 lg:mx-10 -my-5 text-white text-xl">
-          <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
-            <svg
-              className="inline w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
-            </svg>
-            <div className="lg:inline hidden px-2">Email</div>
-          </button>
+          <a href="mailto:chrisalmith@gmail.com">
+            <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
+              <svg
+                className="inline w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+              </svg>
+              <div className="lg:inline hidden px-2">Email</div>
+            </button>
+          </a>
 
-          <button className="py-2 px-3 bg-blue-500 rounded mx-2 lg:mx-5 shadow-md hover:bg-blue-600">
-            <svg
-              className="inline w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-            </svg>
-            <div className="lg:inline hidden px-2">LinkedIn</div>
-          </button>
-
-          <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
-            <svg
-              className="inline w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
-              />
-            </svg>
-            <div className="px-2 inline">Resume</div>
-          </button>
+          <a href="https://www.linkedin.com/in/christopher-warren-188b2180/">
+            <button className="py-2 px-3 bg-blue-500 rounded mx-2 lg:mx-5 shadow-md hover:bg-blue-600">
+              <svg
+                className="inline w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+              <div className="lg:inline hidden px-2">LinkedIn</div>
+            </button>
+          </a>
+          <a href="/assets/Christopher-Warren-Resume.pdf" target="_blank">
+            <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
+              <svg
+                className="inline w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+                />
+              </svg>
+              <div className="px-2 inline">Resume</div>
+            </button>
+          </a>
         </div>
         <form
           onSubmit={(e) => handleSubmit(e)}

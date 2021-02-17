@@ -26,46 +26,37 @@ const Projects = () => {
       id: 0,
       name: "Dev-Apparel",
       about:
-        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart,",
-      imageURL: "https://www.chriswarren.tech/img/projects/dev-apparel.png",
+        "Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database. It features a filtering option to filter store items based on various types. It also features dynamically rendered pages for each item in the database.",
+      imageURL: "/images/dev-apparel.png",
       liveURL: "https://dev-apparel.vercel.app/",
       sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
     },
     {
       id: 1,
-      name: "city bois",
+      name: "Refurn",
       about:
-        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
-      imageURL: "https://www.chriswarren.tech/img/projects/dev-apparel.png",
-      liveURL: "https://dev-apparel.vercel.app/",
-      sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
+        "Refurn is a Fullstack E-commerce App, built using - React, NodeJS, Express, MongoDB, Bootstrap, and Firebase Storage as a solution to store images. Refurn was built to exemplify my abilities to work with CRUD operations. Refurn supports authentication, allowing users to login and upload furniture they wish to sell. This then enables the owner to see the listing and either approve or deny the offer.",
+      imageURL: "/images/refurn.png",
+      liveURL: "https://refurn.herokuapp.com/",
+      sourceURL: "https://github.com/Christopher-Warren/Refurn",
     },
     {
       id: 2,
-      name: "food makers",
+      name: "IP Tracker",
       about:
-        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
-      imageURL: "https://www.chriswarren.tech/img/projects/dev-apparel.png",
-      liveURL: "https://dev-apparel.vercel.app/",
-      sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
+        "IP Tracker is an IP location tool, built using - React, TailwindCSS, and leaflet as a mapping solution. IP Tracker gets the users IP address on load and shows the location and ISP information. This tool features a Generate IP button which generates a random IP address, then shows the IP location and ISP info.",
+      imageURL: "/images/iptracker.png",
+      liveURL: "https://iptracker-phi.vercel.app/",
+      sourceURL: "https://github.com/Christopher-Warren/iptracker",
     },
     {
       id: 3,
-      name: "food makers",
+      name: "Portfolio",
       about:
-        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
-      imageURL: "https://www.chriswarren.tech/img/projects/dev-apparel.png",
-      liveURL: "https://dev-apparel.vercel.app/",
-      sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
-    },
-    {
-      id: 4,
-      name: "food makers",
-      about:
-        "Dev-Apparel is an E-commerce App, built using - NextJS, MongoDB, React, Stripe, Use-Shopping-Cart, and Bootstrap.",
-      imageURL: "https://www.chriswarren.tech/img/projects/dev-apparel.png",
-      liveURL: "https://dev-apparel.vercel.app/",
-      sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
+        "Here you can find the source code of my portfolio. I used NextJS, React, TailwindCSS, and Nodemailer as a solution for users to contact me. This portfolio was built to exemplify my skills with UX/UI best practices.",
+      imageURL: "/images/portfolio.png",
+      liveURL: "https://www.chriswarren.tech/",
+      sourceURL: "https://github.com/Christopher-Warren/portfoliov3",
     },
   ];
 
@@ -92,9 +83,10 @@ const Projects = () => {
           </div>
 
           {/* ^^^ Source/Live ^^^ */}
+
           <img
             src={project.imageURL}
-            className="w-8/12 lg:w-9/12 h-3/6 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md"
+            className="w-8/12 lg:w-9/12 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md"
           />
 
           <div className="mt-5 py-3 px-5 text-gray-800">

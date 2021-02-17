@@ -12,13 +12,16 @@ const About = () => {
           </div>
 
           <p className="text-2xl lg:text-4xl font-light lg:leading-snug">
-            I began coding many years ago in a distant dojo, known to very few.
-            It wasn't long after that the shoulin showed me the way of the web
-            development ways.I began coding many years ago in a distant dojo,
-            known to very few. It wasn't long after that the shoulin showed me
-            the way of the web development ways.I began coding many years ago in
-            a distant dojo, known to very few. It wasn't long after that the
-            shoulin showed me the way of the web development ways.
+            I currently work at Parkridge Valley West – a behavioral health
+            hospital located in Tennessee, however, I am focused on making a
+            career switch to Web Development as technology has always been my
+            biggest passion. My language of choice is{" "}
+            <bold className="font-medium">Javascript.</bold> Some
+            technologies/frameworks that I work with are{" "}
+            <bold className="font-medium">
+              NextJS, React, NodeJS, MongoDB, Express, Bootstrap, and
+              TailwindCSS.
+            </bold>{" "}
           </p>
         </article>
       </div>

@@ -197,12 +197,12 @@ const Projects = () => {
   });
 
   return (
-    <section className="lg:w-4/5 w-11/12 mx-auto h-full ">
+    <section className="lg:w-4/5 w-11/12 mx-auto h-full mt-10">
       {/* pt-16 offsets the navbar height */}
       <div className="pt-16">
         <article className="relative">
           <div className="" id="projects">
-            <h1 className=" text-blue-600 text-6xl lg:text-9xl font-bold lg:mb-28 mb-16  text-center">
+            <h1 className=" text-blue-600 text-6xl lg:text-8xl font-bold lg:mb-28 mb-16  text-center">
               Projects
             </h1>
           </div>

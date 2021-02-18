@@ -55,6 +55,13 @@ div {
   line-height: 1.25rem;
   padding-bottom: 2rem;
 }
+
+.shrink-label {
+  font-size: 1.2rem;
+  line-height: 1.25rem;
+  padding-bottom: 2rem;
+}
+
 .name-input:focus {
   outline-color: rgba(0, 255, 255, 0);
   outline-style: solid;
@@ -96,11 +103,15 @@ div {
 
 .test-3 {
   border-width: 1px;
-  border-color: rgb(0, 255, 255);
-} */
+  border-color: rgb(0, 255, 255); 
+}*/
 
 .contact-button:hover {
   width: 100%;
+}
+.message-sent {
+  width: 100%;
+  color: white;
 }
 
 .source-arrow {

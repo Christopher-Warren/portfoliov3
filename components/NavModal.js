@@ -37,10 +37,7 @@ export default function NavModal({ activeLink }) {
   return (
     <div className="flex w-full lg:hidden justify-end items-center">
       <ul className=" text-blue-600">
-        <li
-          onClick={handleNavModal}
-          className="text-center px-2 border  border-red-100"
-        >
+        <li onClick={handleNavModal} className="text-center px-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -65,7 +62,7 @@ export default function NavModal({ activeLink }) {
       >
         <div
           onClick={handleNavModal}
-          className="flex justify-center border text-blue-600 border-red-400"
+          className="flex justify-center border text-blue-600"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +80,7 @@ export default function NavModal({ activeLink }) {
           </svg>
         </div>
         {/* Modal Link Content */}
-        <ul className="flex flex-col items-center text-4xl font-bold border border-red-400 mt-10">
+        <ul className="flex flex-col items-center text-4xl font-bold mt-10">
           <li className="px-2 py-2">
             <a
               className={activeLink === 0 ? "text-blue-600" : ""}

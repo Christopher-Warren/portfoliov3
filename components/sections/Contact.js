@@ -6,16 +6,48 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const [messageStatus, setMessageStatus] = useState({});
+  const [alert, setAlert] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { data } = await axios.post("/api/contact", {
-      name: name,
-      email: email,
-      message: message,
-    });
+    if (!name) {
+      document.getElementById("name").focus();
+    } else if (!email) {
+      document.getElementById("email").focus();
+    } else if (!message) {
+      document.getElementById("message").focus();
+    } else {
+      const { data } = await axios.post("/api/contact", {
+        name: name,
+        email: email,
+        message: message,
+      });
+      setMessageStatus(data);
+      setAlert(true);
+      setTimeout(() => {
+        setAlert(false);
+        setMessageStatus({});
+        setName("");
+        setEmail("");
+        setMessage("");
+      }, 10000);
+    }
+  };
 
-    console.log(data);
+  const renderStatus = () => {
+    let status;
+    if (messageStatus.error) {
+      status = "Server Error";
+      return status;
+    } else if (messageStatus.success) {
+      status = "Message Sent";
+      return status;
+    } else {
+      status = "Send Message";
+      return status;
+    }
   };
 
   return (
@@ -81,49 +113,61 @@ const Contact = () => {
           onSubmit={(e) => handleSubmit(e)}
           className="lg:flex lg:flex-row flex-col flex-wrap w-full"
         >
-          <div className="relative lg:w-1/2 pr-0 lg:pr-10 test-1">
+          <div className="relative lg:w-1/2 pr-0 lg:pr-10 ">
             <input
               className="rounded bg-gray-200 text-2xl lg:text-3xl name-input focus:border-gray-900 pt-5 px-4 pb-2 w-full"
               type="text"
               name="name"
+              id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              disabled={alert ? true : false}
             />
             <label
-              className="absolute name-label text-3xl  left-2 bottom-2 transition-all px-2 pb-1 text-gray-600 pointer-events-none"
+              className={`absolute text-3xl  left-2 bottom-2 transition-all px-2 pb-1 text-gray-600 pointer-events-none name-label ${
+                name && "shrink-label"
+              }`}
               htmlFor="name"
             >
               Name{" "}
             </label>
           </div>
 
-          <div className="relative test-1 lg:w-1/2 ">
+          <div className="relative lg:w-1/2 ">
             <input
               className="rounded bg-gray-200 text-2xl lg:text-3xl name-input focus:border-gray-900 mt-5 lg:mt-0 pt-5 px-4 pb-2 w-full"
               type="text"
               name="email"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              disabled={alert ? true : false}
             />
             <label
-              className="absolute name-label text-3xl  left-2 bottom-2 transition-all px-2 pb-1 text-gray-600  pointer-events-none"
+              className={`absolute name-label text-3xl  left-2 bottom-2 transition-all px-2 pb-1 text-gray-600  pointer-events-none ${
+                email && "shrink-label"
+              }`}
               htmlFor="name"
             >
               Email{" "}
             </label>
           </div>
 
-          <div className="relative test-1 w-full mt-10">
+          <div className="relative  w-full mt-10">
             <textarea
               className="rounded bg-gray-200 text-2xl lg:text-3xl name-input focus:border-gray-900 pt-8 px-4 pb-2 w-full"
               type="text"
               name="message"
+              id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows="4"
+              disabled={alert ? true : false}
             />
             <label
-              className="absolute name-label text-3xl  left-2 top-2 transition-all px-2 text-gray-600 pointer-events-none"
+              className={`absolute name-label text-3xl  left-2 top-2 transition-all px-2 text-gray-600 pointer-events-none ${
+                message && "shrink-label"
+              }`}
               htmlFor="name"
             >
               Message{" "}
@@ -146,18 +190,17 @@ const Contact = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           /> */}
-          <div className="">
-            {/* <input
-              className="bg-blue-600 text-white rounded shadow-a-xl absolute right-10 -bottom-5 px-5 py-2 cursor-pointer"
-              type="submit"
-              value="Send Message"
-            ></input> */}
 
+          <div className="relative w-full h-7">
             <button
               type="submit"
-              className="rounded shadow-a-lg bg-white  hover:text-white transition-all absolute right-5 lg:right-10 -bottom-5 w-48 text-xl cursor-pointer flex items-center justify-between"
+              className="rounded shadow-a-lg bg-white   transition-all absolute right-5 lg:right-10 -bottom-16 w-48 text-xl cursor-pointer flex items-center justify-between"
             >
-              <div className="inline test-1 bg-blue-600 p-2 h-10 w-3/12 contact-button transition-all rounded">
+              <div
+                className={`inline  p-2 h-10 w-3/12 contact-button hover:text-white transition-all rounded ${
+                  alert && "message-sent"
+                } ${messageStatus.error ? "bg-red-600" : "bg-blue-600"}`}
+              >
                 <svg
                   className="absolute text-white"
                   xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +216,9 @@ const Contact = () => {
                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
                   />
                 </svg>
-                <p className="inline absolute right-2 text-xl">Send Message</p>
+                <p className="inline absolute right-2 text-xl">
+                  {renderStatus()}
+                </p>
               </div>
             </button>
           </div>

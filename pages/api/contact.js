@@ -22,7 +22,7 @@ export default async function contactAPI(req, res) {
         },
       });
 
-      const mailOptions = {
+      const selfMailOptions = {
         from: "chris@chriswarren.tech",
         to: "chrisalmith@gmail.com",
         subject: `New message from ${req.body.name}`,
@@ -30,12 +30,21 @@ export default async function contactAPI(req, res) {
         html: `<h1>From: ${req.body.name}</h1><h1>Contact: ${req.body.email}</h1> <h1>Message: ${req.body.message}</h1>`,
       };
 
+      const guestMailOptions = {
+        from: "chris@chriswarren.tech",
+        to: req.body.email,
+        subject: `Thanks For Reaching Out, ${req.body.name}!`,
+        text: `Your message was successfully submitted. I will contact you shortly.`,
+        html: `<h1>Your message was successfully submitted. I will contact you shortly.</h1><br /><h1>Sincerely, Chris</h1>`,
+      };
+
       if (!req.body.name || !req.body.message || !req.body.email) {
         errObj = {
           invalid: "One or more fields are empty",
         };
       } else {
-        const response = await transporter.sendMail(mailOptions);
+        await transporter.sendMail(selfMailOptions);
+        await transporter.sendMail(guestMailOptions);
         return response;
       }
     }
@@ -46,7 +55,7 @@ export default async function contactAPI(req, res) {
   }
 
   if (errObj) {
-    res.status(400).json({ error: errObj });
+    res.status(200).json({ error: errObj });
   } else {
     res.status(200).json({ success: successObj });
   }

@@ -126,7 +126,7 @@ div {
 }
 
 .-z-10 {
-  z-index: -10;
+  z-index: -100;
 }
 
 .truncate-multi {

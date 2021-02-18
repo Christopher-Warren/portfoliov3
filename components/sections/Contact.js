@@ -60,8 +60,8 @@ const Contact = () => {
           Contact
         </h1>
       </div>
-      <div className="relative w-full  rounded shadow-a-xl px-5 lg:px-10 pb-10 p-14 flex">
-        <div className="absolute top-0 left-0 mx-5 lg:mx-10 -my-5 text-white text-xl">
+      <div className="relative w-full  rounded shadow-a-xl bg-white px-5 lg:px-10 pb-10 p-14">
+        <div className="absolute top-0 left-0 mx-5 lg:mx-10 -my-5 text-white text-xl ">
           <a href="mailto:chrisalmith@gmail.com">
             <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
               <svg
@@ -114,7 +114,7 @@ const Contact = () => {
         </div>
         <form
           onSubmit={(e) => handleSubmit(e)}
-          className="lg:flex lg:flex-row flex-col flex-wrap w-full"
+          className="lg:flex lg:flex-row flex-col flex-wrap w-full relative"
         >
           <div className="relative lg:w-1/2 pr-0 lg:pr-10 ">
             <input

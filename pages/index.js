@@ -45,11 +45,21 @@ export default function Home() {
           </div>
         </div>
         <Projects />
-
+        <div className="relative hidden lg:block">
+          <div className="absolute -my-28  ">
+            <img className="h-96" src="/undraw_contact.svg" />
+          </div>
+        </div>
         <Contact />
       </div>
       <NavBar activeLink={activeLink} setActiveLink={setActiveLink} />
-      <footer className="h-20 w-full bg-green-600 mt-20"></footer>
+      <footer className="h-20 w-full bg-white mt-20">
+        <li className="pr-4  border-gray-300">
+          <h1 className={`text-7xl font-black text-blue-600 text-center `}>
+            CW
+          </h1>
+        </li>
+      </footer>
     </div>
   );
 }

@@ -76,7 +76,10 @@ const Contact = () => {
             </button>
           </a>
 
-          <a href="https://www.linkedin.com/in/christopher-warren-188b2180/">
+          <a
+            href="https://www.linkedin.com/in/christopher-warren-188b2180/"
+            target="_blank"
+          >
             <button className="py-2 px-3 bg-blue-500 rounded mx-2 lg:mx-5 shadow-md hover:bg-blue-600">
               <svg
                 className="inline w-6 h-6"
@@ -173,23 +176,6 @@ const Contact = () => {
               Message{" "}
             </label>
           </div>
-          {/* <label htmlFor="email">email: </label>
-          <input
-            className="rounded"
-            type="text"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          <label htmlFor="message">message: </label>
-          <input
-            className="rounded"
-            type="text"
-            name="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          /> */}
 
           <div className="relative w-full h-7">
             <button

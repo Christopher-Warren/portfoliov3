@@ -59,15 +59,15 @@ const Hero = () => {
       className="lg:h-full h-screen flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-4/5 w-11/12 mx-auto"
     >
       <article className="lg:w-1/2 mb-4 md:mb-8 lg:mb-56">
-        <h1 className="text-blue-600 text-5xl font-bold my-5 lg:my-10 lg:text-8xl">
+        <h1 className="text-blue-600 text-5xl font-bold my-5 lg:my-10 lg:text-7xl">
           Christopher
           <br /> Warren
         </h1>
 
-        <p className="text-2xl lg:text-4xl font-light lg:leading-snug lg:w-10/12">
-          I am a self-taught Software Developer currently residing in
-          Chattanooga, TN. I began coding in early 2020 and haven't looked back
-          since.
+        <p className="text-2xl lg:text-3xl font-light lg:leading-snug lg:w-10/12">
+          I am a Software Developer currently residing in Chattanooga, TN. I
+          have a passion for problem solving, and technology. This passion is
+          what drives my interest in Web Development.
         </p>
         <div
           className="hero-button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600 mt-5 lg:mt-10 cursor-pointer "

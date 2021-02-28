@@ -54,7 +54,7 @@ const Contact = () => {
     <div id="contact" className=" w-11/12 lg:w-4/5 mx-auto">
       <div className="">
         <h1
-          className=" text-blue-600 text-6xl lg:text-8xl font-bold my-14 lg:my-10 lg:mb-20 text-center"
+          className=" text-blue-600 text-6xl lg:text-7xl font-bold my-14 lg:my-10 lg:mb-20 text-center"
           id="projects"
         >
           Contact
@@ -102,9 +102,9 @@ const Contact = () => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
                 />
               </svg>
@@ -196,9 +196,9 @@ const Contact = () => {
                   width="24px"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
                   />
                 </svg>

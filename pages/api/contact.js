@@ -43,8 +43,9 @@ export default async function contactAPI(req, res) {
           invalid: "One or more fields are empty",
         };
       } else {
-        await transporter.sendMail(selfMailOptions);
+        const response = await transporter.sendMail(selfMailOptions);
         await transporter.sendMail(guestMailOptions);
+
         return response;
       }
     }
@@ -54,9 +55,9 @@ export default async function contactAPI(req, res) {
     errObj = error;
   }
 
-  if (errObj) {
-    res.status(200).json({ error: errObj });
-  } else {
+  if (successObj) {
     res.status(200).json({ success: successObj });
+  } else {
+    res.status(200).json({ error: errObj });
   }
 }

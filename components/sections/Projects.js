@@ -75,7 +75,7 @@ const Projects = () => {
             </a>
             <a href={project.liveURL}>
               <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-blue-600 transition-colors bg-blue-500 text-white rounded-l rounded-tr text-lg">
-                <div className="font text-lg font-medium">Live</div>
+                <div className="font text-lg font-medium">Demo</div>
 
                 <div className="live-arrow absolute right-0 mt-2 "></div>
               </div>
@@ -135,20 +135,19 @@ const Projects = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                width="120px"
-                className="modal-svg transition-all"
+                className="w-16 lg:w-28"
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
                 />
               </svg>
             </div>
 
             <img
-              className=" mx-auto lg:h-2/5 rounded-lg object-contain object-top shadow-a-xl"
+              className=" mx-auto lg:h-2/5  rounded-md object-contain object-top shadow-a-xl"
               src={selectedProject && selectedProject.imageURL}
             ></img>
             <div className="fit mx-auto lg:w-4/6">
@@ -202,7 +201,7 @@ const Projects = () => {
       <div className="pt-16">
         <article className="relative">
           <div className="" id="projects">
-            <h1 className=" text-blue-600 text-6xl lg:text-8xl font-bold lg:mb-28 mb-16  text-center">
+            <h1 className=" text-blue-600 text-6xl lg:text-7xl font-bold lg:mb-28 mb-16  text-center">
               Projects
             </h1>
           </div>

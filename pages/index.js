@@ -49,7 +49,7 @@ export default function Home() {
         </div>
         <About />
         <div className="relative hidden lg:block">
-          <div className="absolute right-0 -my-28 -z-10">
+          <div className="absolute right-0 -my-28">
             <img style={{ height: "30rem" }} src="/thinking-dude.svg" />
           </div>
         </div>

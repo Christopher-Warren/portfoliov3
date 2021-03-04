@@ -18,6 +18,22 @@ div {
   font-family: "Ubuntu", sans-serif;
 }
 
+.bg-black-900 {
+  background-color: #18191a;
+}
+
+.dark-mode-svg {
+  margin-top: 2px;
+  margin-left: 2px;
+  color: yellow;
+  rotate: -20deg;
+}
+
+.light-mode-svg {
+  color: rgba(245, 158, 11);
+  rotate: -20deg;
+}
+
 .transition-height {
   transition: height 0.3s;
 }
@@ -28,8 +44,14 @@ div {
     0 0 0px rgba(30, 132, 242, 0.84), 0 0 0px rgba(30, 132, 242, 0.88);
 }
 
-.hero-button:hover .svg {
+.hero-button:hover .hero-svg {
   color: white;
+  fill: rgba(37, 99, 235);
+  transform: rotate(-0.25turn) scale(1.2);
+}
+
+.hero-button:hover .hero-svg-dark {
+  color: #18191a;
   fill: rgba(37, 99, 235);
   transform: rotate(-0.25turn) scale(1.2);
 }
@@ -41,7 +63,19 @@ div {
 
 .info-button:hover .info-svg {
   color: white;
-  fill: rgba(37, 99, 235);
+  fill: #3b82f6;
+  transform: scale(1.2) rotate(-0.25turn);
+  /* width: 40px; */
+}
+
+.info-svg-dark {
+  transform: rotate(-0.25turn);
+  /* transform: scale(1.2); */
+}
+
+.info-button:hover .info-svg-dark {
+  color: #1f2937;
+  fill: #2563eb;
   transform: scale(1.2) rotate(-0.25turn);
   /* width: 40px; */
 }
@@ -80,6 +114,11 @@ div {
 .shadow-a-xl {
   box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-a-xl-dark {
+  box-shadow: 0 3px 8px 1px rgba(187, 187, 187, 0.1),
+    0 10px 10px -5px rgba(85, 85, 85, 0.04);
 }
 
 .shadow-a-lg {

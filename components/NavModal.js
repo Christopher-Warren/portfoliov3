@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import DarkModeContext from "../components/context/DarkModeContext";
 
 export default function NavModal({ activeLink }) {
   const [navModal, setNavModal] = useState(false);
+
+  const { darkMode } = useContext(DarkModeContext);
 
   // disables scroll bars when
   // modal is visible
@@ -56,9 +60,9 @@ export default function NavModal({ activeLink }) {
       </ul>
 
       <div
-        className={` transition-all duration-200 top-0 w-full  absolute bg-white h-screen  ${
-          navModal ? "left-0" : "-left-full"
-        }`}
+        className={` transition-all duration-200 top-0 w-full  absolute ${
+          darkMode ? "bg-black-900 text-white" : "bg-white"
+        } h-screen  ${navModal ? "left-0" : "-left-full"}`}
       >
         <div
           onClick={handleNavModal}

@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import DarkModeContext from "../context/DarkModeContext";
 
 const Projects = () => {
   const [modal, setModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
+
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleModal = (e, index) => {
     e.preventDefault();
@@ -63,18 +67,22 @@ const Projects = () => {
   const renderProjects = projects.map((project, index) => {
     return (
       <div className="lg:w-1/3 px-3 mb-20" key={project.id}>
-        <div className="relative shadow-a-xl w-full inline-block bg-white">
+        <div
+          className={`relative rounded-b shadow-a-xl w-full inline-block ${
+            darkMode ? "bg-gray-800 shadow-a-xl-dark" : "bg-white"
+          }`}
+        >
           {/* vvv Source/Live vvv */}
           <div className="absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
             <a href={project.sourceURL}>
-              <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-gray-600 transition-colors bg-gray-500 text-white rounded-l rounded-tr text-lg">
+              <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-gray-700 transition-colors bg-gray-500 text-white rounded-l rounded-tr text-lg">
                 <div className="font text-lg font-medium ">Source</div>
 
                 <div className="source-arrow absolute right-0 mt-2 "></div>
               </div>
             </a>
             <a href={project.liveURL}>
-              <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-blue-600 transition-colors bg-blue-500 text-white rounded-l rounded-tr text-lg">
+              <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-blue-700 transition-colors bg-blue-500 text-white rounded-l rounded-tr text-lg">
                 <div className="font text-lg font-medium">Demo</div>
 
                 <div className="live-arrow absolute right-0 mt-2 "></div>
@@ -89,12 +97,24 @@ const Projects = () => {
             className="w-8/12 lg:w-9/12 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md"
           />
 
-          <div className="mt-5 py-3 px-5 text-gray-800">
-            <h1 className="lg:text-4xl text-2xl font-semibold py-2">
+          <div
+            className={`mt-5 py-3 px-5  ${
+              darkMode ? "text-white" : "text-gray-800"
+            }`}
+          >
+            <h1
+              className={`lg:text-4xl text-2xl font-semibold py-2 ${
+                darkMode ? "text-pink-600" : "text-gray-800"
+              }`}
+            >
               {project.name}
             </h1>
             {/* lg:h-28 ensures all cards are same height on lg screens */}
-            <p className="lg:text-xl text-lg font-light text-gray-700 leading-6 lg:h-28 truncate-multi mb-4">
+            <p
+              className={`lg:text-xl text-lg font-light leading-6 lg:h-28 truncate-multi mb-4 ${
+                darkMode ? "text-gray-200" : "text-gray-700"
+              }`}
+            >
               {project.about}
             </p>
             <div
@@ -103,9 +123,11 @@ const Projects = () => {
             >
               More Info
               <svg
-                className="info-svg transition-all duration-200 ml-1 w-8"
+                className={`${
+                  darkMode ? "info-svg-dark" : "info-svg "
+                } transition-all duration-200 ml-1 w-8`}
                 xmlns="http://www.w3.org/2000/svg"
-                fill="white"
+                fill={darkMode ? "#1F2937" : "white"}
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
@@ -121,21 +143,23 @@ const Projects = () => {
         </div>
         {/* Modal */}
         <div
-          className={`fixed bg-white w-full h-screen right-0 top-0 ${
+          className={`fixed ${
+            darkMode ? "bg-black-900 text-white" : "bg-white"
+          } w-full h-screen right-0 top-0 ${
             modal ? "right-0" : "right-full"
           } transition-all duration-200 z-30`}
         >
           <div className="mx-5 h-screen relative">
             <div
               onClick={handleModal}
-              className="w-min mx-auto text-red-400 modal-button"
+              className="w-min mx-auto text-red-500 modal-button"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="w-16 lg:w-28"
+                className="w-16 lg:w-28 modal-svg  transition-all duration-200"
               >
                 <path
                   strokeLinecap="round"
@@ -155,12 +179,16 @@ const Projects = () => {
                 <h1 className="justify-self-start text-blue-600 text-5xl lg:text-5xl font-bold text-center my-5">
                   {selectedProject && selectedProject.name}
                 </h1>
-                <p className="text-lg leading-tight lg:text-3xl font-light">
+                <p className="text-lg leading-tight md:text-3xl font-light">
                   {selectedProject && selectedProject.about}
                 </p>
               </div>
 
-              <div className="flex absolute bottom-0 left-0 mb-5 lg:mb-14 justify-center w-full font-semibold lg:text-4xl text-2xl text-gray-800 tracking-wide">
+              <div
+                className={`flex absolute bottom-0 left-0 mb-5 lg:mb-14 justify-center w-full font-semibold lg:text-4xl text-2xl ${
+                  darkMode ? "text-pink-600" : "text-gray-800"
+                } tracking-wide`}
+              >
                 <a href={selectedProject && selectedProject.liveURL}>
                   <div className="modal-button flex px-5 cursor-pointer">
                     <svg
@@ -171,7 +199,7 @@ const Projects = () => {
                     >
                       <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-6 17c1.513-6.587 7-7.778 7-7.778v-2.222l5 4.425-5 4.464v-2.223c0 .001-3.78-.114-7 3.334z" />
                     </svg>
-                    <p className="ml-5 ">Live</p>
+                    <p className="ml-5 ">Demo</p>
                   </div>
                 </a>
                 <a href={selectedProject && selectedProject.sourceURL}>

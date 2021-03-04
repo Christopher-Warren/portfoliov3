@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import NavModal from "./NavModal";
+import DarkModeContext from "../components/context/DarkModeContext";
 
 const NavItems = ({ activeLink }) => {
+  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+
   const handleLinkClick = (e) => {
     e.preventDefault();
 
@@ -23,11 +27,19 @@ const NavItems = ({ activeLink }) => {
   const textblue = "text-blue-600";
   return (
     <div className="flex justify-between lg:w-4/5 w-11/12 mx-auto">
-      <ul className="flex items-center py-2 text-gray-800">
-        <li className="pr-4 border-r-2 border-gray-300">
+      <ul
+        className={`flex items-center py-2 ${
+          darkMode ? "text-white" : "text-gray-800"
+        }`}
+      >
+        <li
+          className={`pr-4 border-r-2 ${
+            darkMode ? "border-gray-700" : "border-gray-300"
+          } `}
+        >
           <h1 className={`text-5xl font-black ${textblue}`}>CW</h1>
         </li>
-        <li className="pl-8 pr-6">
+        <li className="pl-4 pr-4">
           <a href="https://github.com/Christopher-Warren">
             <svg
               className="w-8"
@@ -39,7 +51,7 @@ const NavItems = ({ activeLink }) => {
             </svg>
           </a>
         </li>
-        <li className="">
+        <li className="pr-4">
           <a href="https://www.linkedin.com/in/christopher-warren-188b2180/">
             <svg
               className="w-8"
@@ -51,9 +63,66 @@ const NavItems = ({ activeLink }) => {
             </svg>
           </a>
         </li>
+        <li className="">
+          <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+            <label
+              for="toggle"
+              class={`inline whitespace-nowrap text-sm absolute bottom-6 left-1`}
+            ></label>
+            <div
+              className={`absolute block w-8 h-8 -top-1.5 rounded-full border-4  appearance-none cursor-pointer z-30 pointer-events-none ${
+                darkMode
+                  ? "right-0 border-white bg-white "
+                  : "border-gray-700 bg-gray-700"
+              }`}
+            >
+              <svg
+                className={`dark-mode-svg ${darkMode ? "hidden" : ""}`}
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 10.999c1.437.438 2.562 1.564 2.999 3.001.44-1.437 1.565-2.562 3.001-3-1.436-.439-2.561-1.563-3.001-3-.437 1.436-1.562 2.561-2.999 2.999zm8.001.001c.958.293 1.707 1.042 2 2.001.291-.959 1.042-1.709 1.999-2.001-.957-.292-1.707-1.042-2-2-.293.958-1.042 1.708-1.999 2zm-1-9c-.437 1.437-1.563 2.562-2.998 3.001 1.438.44 2.561 1.564 3.001 3.002.437-1.438 1.563-2.563 2.996-3.002-1.433-.437-2.559-1.564-2.999-3.001zm-7.001 22c-6.617 0-12-5.383-12-12s5.383-12 12-12c1.894 0 3.63.497 5.37 1.179-2.948.504-9.37 3.266-9.37 10.821 0 7.454 5.917 10.208 9.37 10.821-1.5.846-3.476 1.179-5.37 1.179z" />
+              </svg>
+
+              <svg
+                className={`light-mode-svg ${darkMode ? "" : "hidden"}`}
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M22.088 13.126l1.912-1.126-1.912-1.126c-1.021-.602-1.372-1.91-.788-2.942l1.093-1.932-2.22-.02c-1.185-.01-2.143-.968-2.153-2.153l-.02-2.219-1.932 1.093c-1.031.583-2.34.233-2.941-.788l-1.127-1.913-1.127 1.913c-.602 1.021-1.91 1.372-2.941.788l-1.932-1.093-.02 2.219c-.01 1.185-.968 2.143-2.153 2.153l-2.22.02 1.093 1.932c.584 1.032.233 2.34-.788 2.942l-1.912 1.126 1.912 1.126c1.021.602 1.372 1.91.788 2.942l-1.093 1.932 2.22.02c1.185.01 2.143.968 2.153 2.153l.02 2.219 1.932-1.093c1.031-.583 2.34-.233 2.941.788l1.127 1.913 1.127-1.913c.602-1.021 1.91-1.372 2.941-.788l1.932 1.093.02-2.219c.011-1.185.969-2.143 2.153-2.153l2.22-.02-1.093-1.932c-.584-1.031-.234-2.34.788-2.942zm-10.117 6.874c-4.411 0-8-3.589-8-8s3.588-8 8-8 8 3.589 8 8-3.589 8-8 8zm6.029-8c0 3.313-2.687 6-6 6s-6-2.687-6-6 2.687-6 6-6 6 2.687 6 6z" />
+              </svg>
+            </div>
+            <input
+              type="checkbox"
+              name="toggle"
+              id="toggle"
+              className={`absolute block w-8 h-8 -top-1.5 rounded-full bg-white border-4  appearance-none cursor-pointer ${
+                darkMode ? "right-0 " : ""
+              }`}
+              onChange={() => setDarkMode(!darkMode)}
+            ></input>
+
+            <label
+              for="toggle"
+              class={`toggle-label block overflow-hidden h-5 rounded-full  cursor-pointer ${
+                darkMode ? "bg-yellow-300" : "bg-purple-400"
+              }`}
+            ></label>
+          </div>
+        </li>
       </ul>
 
-      <ul className="lg:flex lg:items-center sm:text-4xl hidden font-medium text-gray-800">
+      <ul
+        className={`lg:flex lg:items-center sm:text-4xl hidden font-medium ${
+          darkMode ? "text-white" : "text-gray-800"
+        }`}
+      >
         <li className="px-2">
           <a
             href="#home"

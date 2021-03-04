@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
 import isInViewport from "../utils/isInViewPort";
 
 import NavItems from "./NavItems";
+import DarkModeContext from "../components/context/DarkModeContext";
 
 const NavBar = ({ activeLink, setActiveLink }) => {
   const [expandNav, setExpandNav] = useState(true);
+
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleScroll = (e) => {
     if (window.scrollY > 40) {
@@ -31,7 +34,9 @@ const NavBar = ({ activeLink, setActiveLink }) => {
 
   return (
     <div
-      className={`text-2xl flex fixed top-0 w-full bg-white z-20 transition-all ease-in-out ${
+      className={`text-2xl flex fixed top-0 w-full ${
+        darkMode ? "bg-gray-800" : "bg-white"
+      } z-20 transition-all ease-in-out ${
         expandNav
           ? "sm:h-20 sm:duration-700 sm:shadow-none h-16 shadow-lg duration-500"
           : "h-16 shadow-lg duration-500"

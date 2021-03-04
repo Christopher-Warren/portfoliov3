@@ -8,11 +8,16 @@ import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
 import Contact from "../components/sections/Contact";
 
+import DarkModeContext from "../components/context/DarkModeContext";
+
 export default function Home() {
   const [activeLink, setActiveLink] = useState(0);
 
+  const [darkMode, setDarkMode] = useState(false);
+  const value = { darkMode, setDarkMode };
+
   return (
-    <div>
+    <DarkModeContext.Provider value={value}>
       <Head>
         <title>
           {(activeLink === 0 && "Home") ||
@@ -31,7 +36,11 @@ export default function Home() {
       </Head>
       {/* pt-20 offsets size of NavBar */}
 
-      <div className=" sm:mt-20 mt-16 ">
+      <div
+        className={`sm:pt-20 pt-16 ${
+          darkMode ? "bg-black-900" : "bg-white"
+        } transition-all duration-500`}
+      >
         <Hero />
         <div className="relative hidden lg:block">
           <div className="absolute -my-28">
@@ -52,14 +61,17 @@ export default function Home() {
         </div>
         <Contact />
       </div>
+
       <NavBar activeLink={activeLink} setActiveLink={setActiveLink} />
-      <footer className="h-20 w-full bg-white mt-20">
+      <footer
+        className={`h-20 w-full ${darkMode ? "bg-black-900" : "bg-white"}`}
+      >
         <li className="pr-4  border-gray-300">
           <h1 className={`text-7xl font-black text-blue-600 text-center `}>
             CW
           </h1>
         </li>
       </footer>
-    </div>
+    </DarkModeContext.Provider>
   );
 }

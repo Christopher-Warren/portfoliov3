@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+
+import DarkModeContext from "../context/DarkModeContext";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -8,6 +10,8 @@ const Contact = () => {
 
   const [messageStatus, setMessageStatus] = useState({});
   const [alert, setAlert] = useState(false);
+
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,7 +55,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className=" w-11/12 lg:w-4/5 mx-auto">
+    <div id="contact" className=" w-11/12 lg:w-4/5 mx-auto pb-20">
       <div className="">
         <h1
           className=" text-blue-600 text-6xl lg:text-7xl font-bold my-14 lg:my-10 lg:mb-20 text-center"
@@ -60,7 +64,11 @@ const Contact = () => {
           Contact
         </h1>
       </div>
-      <div className="relative w-full  rounded shadow-a-xl bg-white px-5 lg:px-10 pb-10 p-14">
+      <div
+        className={`relative w-full  rounded shadow-a-xl px-5 lg:px-10 pb-10 p-14 ${
+          darkMode ? "bg-gray-800" : "bg-white"
+        }`}
+      >
         <div className="absolute top-0 left-0 mx-5 lg:mx-10 -my-5 text-white text-xl ">
           <a href="mailto:chrisalmith@gmail.com">
             <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
@@ -118,7 +126,9 @@ const Contact = () => {
         >
           <div className="relative lg:w-1/2 pr-0 lg:pr-10 ">
             <input
-              className="rounded bg-gray-200 text-2xl lg:text-3xl name-input focus:border-gray-900 pt-5 px-4 pb-2 w-full"
+              className={`rounded ${
+                darkMode ? "bg-gray-900 text-white" : "bg-gray-200"
+              } text-2xl lg:text-3xl name-input focus:border-gray-900 pt-5 px-4 pb-2 w-full`}
               type="text"
               name="name"
               id="name"
@@ -138,7 +148,9 @@ const Contact = () => {
 
           <div className="relative lg:w-1/2 ">
             <input
-              className="rounded bg-gray-200 text-2xl lg:text-3xl name-input focus:border-gray-900 mt-5 lg:mt-0 pt-5 px-4 pb-2 w-full"
+              className={`${
+                darkMode ? "bg-gray-900 text-white" : "bg-gray-200"
+              } rounded text-2xl lg:text-3xl name-input focus:border-gray-900 mt-5 lg:mt-0 pt-5 px-4 pb-2 w-full`}
               type="text"
               name="email"
               id="email"
@@ -158,7 +170,9 @@ const Contact = () => {
 
           <div className="relative  w-full mt-10">
             <textarea
-              className="rounded bg-gray-200 text-2xl lg:text-3xl name-input focus:border-gray-900 pt-8 px-4 pb-2 w-full"
+              className={`rounded text-2xl lg:text-3xl name-input focus:border-gray-900 pt-8 px-4 pb-2 w-full ${
+                darkMode ? "bg-gray-900 text-white" : "bg-gray-200"
+              }`}
               type="text"
               name="message"
               id="message"
@@ -180,10 +194,12 @@ const Contact = () => {
           <div className="relative w-full h-7">
             <button
               type="submit"
-              className="rounded shadow-a-lg bg-white   transition-all absolute right-5 lg:right-10 -bottom-16 w-48 text-xl cursor-pointer flex items-center justify-between"
+              className={`rounded shadow-a-lg  text-gray-900 hover:text-white ${
+                darkMode ? "bg-gray-700" : "bg-white"
+              }  transition-all absolute right-5 lg:right-10 -bottom-16 w-48 text-xl cursor-pointer flex items-center justify-between`}
             >
               <div
-                className={`inline  p-2 h-10 w-3/12 contact-button hover:text-white transition-all rounded ${
+                className={`inline  p-2 h-10 w-3/12 contact-button  transition-all rounded ${
                   alert && "message-sent"
                 } ${messageStatus.error ? "bg-red-600" : "bg-blue-600"}`}
               >
@@ -202,7 +218,11 @@ const Contact = () => {
                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
                   />
                 </svg>
-                <p className="inline absolute right-2 text-xl">
+                <p
+                  className={`inline absolute right-2 text-xl ${
+                    darkMode ? "text-white" : ""
+                  }`}
+                >
                   {renderStatus()}
                 </p>
               </div>

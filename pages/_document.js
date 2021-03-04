@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head />
-        <body className="bg-white ">
+        <body>
           <link rel="icon" type="image/png" href="/favicon.png" />
           <meta
             httpEquiv="ScreenOrientation"

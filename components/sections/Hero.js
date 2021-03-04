@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import DarkModeContext from "../context/DarkModeContext";
 
 const Hero = () => {
+  const { darkMode } = useContext(DarkModeContext);
+
   useEffect(() => {
     // array with texts to type in typewriter
     const dataText = [
@@ -64,13 +67,17 @@ const Hero = () => {
           <br /> Warren
         </h1>
 
-        <p className="text-2xl lg:text-3xl font-light lg:leading-snug lg:w-10/12">
+        <p
+          className={`text-2xl lg:text-3xl font-light lg:leading-snug lg:w-10/12 ${
+            darkMode ? "text-white" : "text-gray-900"
+          }`}
+        >
           I am a Software Developer currently residing in Chattanooga, TN. I
           have a passion for problem solving, and technology. This passion is
           what drives my interest in Web Development.
         </p>
         <div
-          className="hero-button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600 mt-5 lg:mt-10 cursor-pointer "
+          className="hero-button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600  mt-5 lg:mt-10 cursor-pointer "
           onClick={() =>
             document
               .getElementById("projects")
@@ -78,9 +85,11 @@ const Hero = () => {
           }
         >
           <svg
-            className="svg transition-all duration-200 mr-1"
+            className={`${
+              darkMode ? "hero-svg-dark" : "hero-svg"
+            } transition-all duration-200 mr-1`}
             xmlns="http://www.w3.org/2000/svg"
-            fill="white"
+            fill={darkMode ? "#18191a" : "white"}
             viewBox="0 0 24 24"
             stroke="currentColor"
             width="50px"

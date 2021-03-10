@@ -66,11 +66,11 @@ export default function Home() {
       <footer
         className={`h-20 w-full ${darkMode ? "bg-black-900" : "bg-white"}`}
       >
-        <li className="pr-4  border-gray-300">
+        <div className="pr-4  border-gray-300">
           <h1 className={`text-7xl font-black text-blue-600 text-center `}>
             CW
           </h1>
-        </li>
+        </div>
       </footer>
     </DarkModeContext.Provider>
   );

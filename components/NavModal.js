@@ -39,7 +39,7 @@ export default function NavModal({ activeLink }) {
   };
 
   return (
-    <div className="flex w-full lg:hidden justify-end items-center">
+    <div className="flex w-full lg:hidden justify-end items-center z-50">
       <ul className=" text-blue-600">
         <li onClick={handleNavModal} className="text-center px-2">
           <svg

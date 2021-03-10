@@ -64,13 +64,13 @@ const NavItems = ({ activeLink }) => {
           </a>
         </li>
         <li className="">
-          <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+          <div className="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
             <label
               for="toggle"
-              class={`inline whitespace-nowrap text-sm absolute bottom-6 left-1`}
+              className={`inline whitespace-nowrap text-sm absolute bottom-6 left-1`}
             ></label>
             <div
-              className={`absolute block w-8 h-8 -top-1.5 rounded-full border-4  appearance-none cursor-pointer z-30 pointer-events-none ${
+              className={`absolute block w-8 h-8 -top-1.5 rounded-full border-4  appearance-none cursor-pointer z-10 pointer-events-none ${
                 darkMode
                   ? "right-0 border-white bg-white "
                   : "border-gray-700 bg-gray-700"

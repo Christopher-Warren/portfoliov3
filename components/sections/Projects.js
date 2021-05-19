@@ -28,6 +28,15 @@ const Projects = () => {
   const projects = [
     {
       id: 0,
+      name: "Fenrir",
+      about:
+        "A turn-based, survival(ish) RPG game, built from scratch, using - NextJS and MongoDB (for statistic collection). While the art assets are not created by me, the small game engine, itself, is. I built this project to show my skills with bringing an idea to life.",
+      imageURL: "/images/fenrir-preview.png",
+      liveURL: "https://beta-fenrir.vercel.app/",
+      sourceURL: "https://github.com/Christopher-Warren/beta-fenrir",
+    },
+    {
+      id: 1,
       name: "Dev-Apparel",
       about:
         "Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database. It features a filtering option to filter store items based on various types. It also features dynamically rendered pages for each item in the database.",
@@ -36,7 +45,7 @@ const Projects = () => {
       sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
     },
     {
-      id: 1,
+      id: 2,
       name: "Refurn",
       about:
         "Refurn is a Fullstack E-commerce App, built using - React, NodeJS, Express, MongoDB, Bootstrap, and Firebase Storage as a solution to store images. Refurn was built to exemplify my abilities to work with CRUD operations. Refurn supports authentication, allowing users to login and upload furniture they wish to sell. This then enables the owner to see the listing and either approve or deny the offer.",
@@ -45,7 +54,7 @@ const Projects = () => {
       sourceURL: "https://github.com/Christopher-Warren/Refurn",
     },
     {
-      id: 2,
+      id: 3,
       name: "IP Tracker",
       about:
         "IP Tracker is an IP location tool, built using - React, TailwindCSS, and leaflet as a mapping solution. IP Tracker gets the users IP address on load and shows the location and ISP information. This tool features a Generate IP button which generates a random IP address, then shows the IP location and ISP info.",
@@ -54,7 +63,7 @@ const Projects = () => {
       sourceURL: "https://github.com/Christopher-Warren/iptracker",
     },
     {
-      id: 3,
+      id: 4,
       name: "Portfolio",
       about:
         "Here you can find the source code of my portfolio. I used NextJS, React, TailwindCSS, and Nodemailer as a solution for users to contact me. This portfolio was built to exemplify my skills with UX/UI best practices.",

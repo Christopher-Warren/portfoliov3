@@ -66,7 +66,7 @@ const NavItems = ({ activeLink }) => {
         <li className="">
           <div className="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
             <label
-              for="toggle"
+              htmlFor="toggle"
               className={`inline whitespace-nowrap text-sm absolute bottom-6 left-1`}
             ></label>
             <div
@@ -109,8 +109,8 @@ const NavItems = ({ activeLink }) => {
             ></input>
 
             <label
-              for="toggle"
-              class={`toggle-label block overflow-hidden h-5 rounded-full  cursor-pointer ${
+              htmlFor="toggle"
+              className={`toggle-label block overflow-hidden h-5 rounded-full  cursor-pointer ${
                 darkMode ? "bg-yellow-300" : "bg-purple-400"
               }`}
             ></label>

@@ -28,6 +28,14 @@ export default function Home() {
         </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
+        <meta property="og:title" content="Christopher Warren - Portfolio" />
+        <meta property="og:image" content="/images/seo/seo-linkedin.png" />
+        <meta
+          property="og:description"
+          content="The porfolio page of Christopher Warren"
+        />
+        <meta property="og:url" content="https://www.chriswarren.tech/" />
+
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"

@@ -33,7 +33,7 @@ const NavBar = ({ activeLink, setActiveLink }) => {
   }, []);
 
   return (
-    <div
+    <nav
       className={`text-2xl flex fixed top-0 w-full ${
         darkMode ? "bg-gray-800" : "bg-white"
       } z-20 transition-all ease-in-out ${
@@ -43,7 +43,7 @@ const NavBar = ({ activeLink, setActiveLink }) => {
       }`}
     >
       <NavItems activeLink={activeLink} />
-    </div>
+    </nav>
   );
 };
 

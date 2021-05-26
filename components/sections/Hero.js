@@ -76,7 +76,7 @@ const Hero = () => {
           have a passion for problem solving, and technology. This passion is
           what drives my interest in Web Development.
         </p>
-        <div
+        <button
           className="hero-button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600  mt-5 lg:mt-10 cursor-pointer "
           onClick={() =>
             document
@@ -102,8 +102,8 @@ const Hero = () => {
             />
           </svg>
 
-          <div>See Projects</div>
-        </div>
+          <p>See Projects</p>
+        </button>
       </article>
       <div className="flex relative min-h-0 lg:h-4/5  z-10">
         <div className=" bg-gray-800 absolute w-2/5 h-3/6 text-pink-600">

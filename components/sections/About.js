@@ -24,9 +24,9 @@ const About = () => {
             }`}
           >
             I currently work at Parkridge Valley West – a behavioral health
-            hospital located in Tennessee, however, I am focused on making a
-            career switch to Web Development as technology has always been my
-            biggest passion. My language of choice is{" "}
+            hospital located in Tennessee, however, I am diligently focused on
+            making a career switch to Web Development as technology has always
+            been my biggest passion. My language of choice is{" "}
             <bold className="font-medium">Javascript.</bold> Some
             technologies/frameworks that I work with are{" "}
             <bold className="font-medium">

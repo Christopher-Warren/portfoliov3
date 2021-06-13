@@ -37,7 +37,7 @@ const NavItems = ({ activeLink }) => {
             darkMode ? "border-gray-700" : "border-gray-300"
           } `}
         >
-          <h1 className={`text-5xl font-black ${textblue}`}>CW</h1>
+          <h1 className={`text-3xl sm:text-5xl font-black ${textblue}`}>CW</h1>
         </li>
         <button>
           <li className="pl-4 pr-4">

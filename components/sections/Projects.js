@@ -39,7 +39,7 @@ const Projects = () => {
       id: 1,
       name: "Dev-Apparel",
       about:
-        "Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database. It features a filtering option to filter store items based on various types. It also features dynamically rendered pages for each item in the database.",
+        "Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database.",
       imageURL: "/images/dev-apparel.png",
       liveURL: "https://dev-apparel.vercel.app/",
       sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
@@ -183,12 +183,12 @@ const Projects = () => {
               className=" mx-auto lg:h-2/5  rounded-md object-contain object-top shadow-a-xl"
               src={selectedProject && selectedProject.imageURL}
             ></img>
-            <div className="fit mx-auto lg:w-4/6">
+            <div className="mx-auto lg:w-4/6">
               <div className="">
-                <h1 className="justify-self-start text-blue-600 text-5xl lg:text-5xl font-bold text-center my-5">
+                <h1 className="justify-self-start text-blue-600 text-3xl lg:text-5xl font-bold text-center my-2">
                   {selectedProject && selectedProject.name}
                 </h1>
-                <p className="text-lg leading-tight md:text-3xl font-light">
+                <p className=" leading-tight md:text-3xl font-light">
                   {selectedProject && selectedProject.about}
                 </p>
               </div>
@@ -235,10 +235,10 @@ const Projects = () => {
   return (
     <section className="lg:w-4/5 w-11/12 mx-auto h-full mt-10">
       {/* pt-16 offsets the navbar height */}
-      <div className="pt-16">
+      <div className="">
         <article className="relative">
           <div className="" id="projects">
-            <h1 className=" text-blue-600 text-6xl lg:text-7xl font-bold lg:mb-28 mb-16  text-center">
+            <h1 className=" text-blue-600 text-5xl lg:text-7xl font-bold lg:mb-28 mb-16  text-center">
               Projects
             </h1>
           </div>

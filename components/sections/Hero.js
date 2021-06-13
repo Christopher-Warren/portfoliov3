@@ -59,7 +59,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="lg:h-full h-screen flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-4/5 w-11/12 mx-auto"
+      className="lg:h-full flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-4/5 w-11/12 mx-auto"
     >
       <article className="lg:w-1/2 mb-4 md:mb-8 lg:mb-56">
         <h1 className="text-blue-600 text-5xl font-bold my-5 lg:my-10 lg:text-7xl">
@@ -68,13 +68,13 @@ const Hero = () => {
         </h1>
 
         <p
-          className={`text-2xl lg:text-3xl font-light lg:leading-snug lg:w-10/12 ${
+          className={`text-xl lg:text-3xl font-light lg:leading-snug lg:w-10/12 ${
             darkMode ? "text-white" : "text-gray-900"
           }`}
         >
-          I am a Software Developer currently residing in Chattanooga, TN. I
+          I am a Front-End Developer currently residing in Chattanooga, TN. I
           have a passion for problem solving, and technology. This passion is
-          what drives my interest in Web Development.
+          what fuels my interest in Web Development.
         </p>
         <button
           className="hero-button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600  mt-5 lg:mt-10 cursor-pointer "
@@ -105,7 +105,7 @@ const Hero = () => {
           <p>See Projects</p>
         </button>
       </article>
-      <div className="flex relative min-h-0 lg:h-4/5  z-10">
+      <div className="flex relative h-64 lg:h-4/5 z-10 ">
         <div className=" bg-gray-800 absolute w-2/5 h-3/6 text-pink-600">
           <div className="bg-gray-700 h-6 md:h-8"></div>
           <h2 className="px-1 md:pt-2 md:px-2 md:text-2xl leading-5"></h2>

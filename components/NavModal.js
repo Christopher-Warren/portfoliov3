@@ -41,13 +41,12 @@ export default function NavModal({ activeLink }) {
   return (
     <div className="flex w-full lg:hidden justify-end items-center z-50">
       <ul className=" text-blue-600">
-        <li onClick={handleNavModal} className="text-center px-2">
+        <li onClick={handleNavModal} className="text-center px-2 w-16">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            width="60px"
           >
             <path
               strokeLinecap="round"

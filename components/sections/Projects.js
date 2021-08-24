@@ -1,96 +1,96 @@
-import { useState, useContext } from "react";
+import { useState, useContext } from 'react'
 
-import DarkModeContext from "../context/DarkModeContext";
+import DarkModeContext from '../context/DarkModeContext'
 
 const Projects = () => {
-  const [modal, setModal] = useState(false);
-  const [selectedProject, setSelectedProject] = useState({});
+  const [modal, setModal] = useState(false)
+  const [selectedProject, setSelectedProject] = useState({})
 
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext)
 
   const handleModal = (e, index) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    setSelectedProject(projects[index]);
-    setModal(!modal);
+    setSelectedProject(projects[index])
+    setModal(!modal)
 
     // prevents content from shifting around
     // when modal is shown
     if (modal) {
-      document.body.style.overflow = "visible";
+      document.body.style.overflow = 'visible'
     } else {
       setTimeout(() => {
-        document.body.style.overflow = "hidden";
-      }, 200);
+        document.body.style.overflow = 'hidden'
+      }, 200)
     }
-  };
+  }
 
   const projects = [
     {
       id: 0,
-      name: "Fenrir",
+      name: 'Fenrir',
       about:
-        "A turn-based, survival(ish) RPG game, built from scratch, using - NextJS and MongoDB (for statistic collection). While the art assets are not created by me, the small game engine, itself, is. I built this project to show my skills with bringing an idea to life.",
-      imageURL: "/images/fenrir-preview.png",
-      liveURL: "https://beta-fenrir.vercel.app/",
-      sourceURL: "https://github.com/Christopher-Warren/beta-fenrir",
+        'A turn-based, survival(ish) RPG game, built from scratch, using - NextJS and MongoDB (for statistic collection). While the art assets are not created by me, the small game engine, itself, is. I built this project to show my skills with bringing an idea to life.',
+      imageURL: '/images/fenrir-preview.png',
+      liveURL: 'https://beta-fenrir.vercel.app/',
+      sourceURL: 'https://github.com/Christopher-Warren/beta-fenrir',
     },
     {
       id: 1,
-      name: "Dev-Apparel",
+      name: 'Dev-Apparel',
       about:
-        "Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database.",
-      imageURL: "/images/dev-apparel.png",
-      liveURL: "https://dev-apparel.vercel.app/",
-      sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
+        'Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database.',
+      imageURL: '/images/dev-apparel.png',
+      liveURL: 'https://dev-apparel.vercel.app/',
+      sourceURL: 'https://github.com/Christopher-Warren/dev-apparel',
     },
     {
       id: 2,
-      name: "Refurn",
+      name: 'Refurn',
       about:
-        "Refurn is a Fullstack E-commerce App, built using - React, NodeJS, Express, MongoDB, Bootstrap, and Firebase Storage as a solution to store images. Refurn was built to exemplify my abilities to work with CRUD operations. Refurn supports authentication, allowing users to login and upload furniture they wish to sell. This then enables the owner to see the listing and either approve or deny the offer.",
-      imageURL: "/images/refurn.png",
-      liveURL: "https://refurn.herokuapp.com/",
-      sourceURL: "https://github.com/Christopher-Warren/Refurn",
+        'Refurn is a Fullstack E-commerce App, built using - React, NodeJS, Express, MongoDB, Bootstrap, and Firebase Storage as a solution to store images. Refurn was built to exemplify my abilities to work with CRUD operations. Refurn supports authentication, allowing users to login and upload furniture they wish to sell. This then enables the owner to see the listing and either approve or deny the offer.',
+      imageURL: '/images/refurn.png',
+      liveURL: 'https://refurn.herokuapp.com/',
+      sourceURL: 'https://github.com/Christopher-Warren/Refurn',
     },
     {
       id: 3,
-      name: "IP Tracker",
+      name: 'IP Tracker',
       about:
-        "IP Tracker is an IP location tool, built using - React, TailwindCSS, and leaflet as a mapping solution. IP Tracker gets the users IP address on load and shows the location and ISP information. This tool features a Generate IP button which generates a random IP address, then shows the IP location and ISP info.",
-      imageURL: "/images/iptracker.png",
-      liveURL: "https://iptracker-phi.vercel.app/",
-      sourceURL: "https://github.com/Christopher-Warren/iptracker",
+        'IP Tracker is an IP location tool, built using - React, TailwindCSS, and leaflet as a mapping solution. IP Tracker gets the users IP address on load and shows the location and ISP information. This tool features a Generate IP button which generates a random IP address, then shows the IP location and ISP info.',
+      imageURL: '/images/iptracker.png',
+      liveURL: 'https://iptracker-phi.vercel.app/',
+      sourceURL: 'https://github.com/Christopher-Warren/iptracker',
     },
     {
       id: 4,
-      name: "Portfolio",
+      name: 'Portfolio',
       about:
-        "Here you can find the source code of my portfolio. I used NextJS, React, TailwindCSS, and Nodemailer as a solution for users to contact me. This portfolio was built to exemplify my skills with UX/UI best practices.",
-      imageURL: "/images/portfolio.png",
-      liveURL: "https://www.chriswarren.tech/",
-      sourceURL: "https://github.com/Christopher-Warren/portfoliov3",
+        'Here you can find the source code of my portfolio. I used NextJS, React, TailwindCSS, and Nodemailer as a solution for users to contact me. This portfolio was built to exemplify my skills with UX/UI best practices.',
+      imageURL: '/images/portfolio.png',
+      liveURL: 'https://www.chriswarren.tech/',
+      sourceURL: 'https://github.com/Christopher-Warren/portfoliov3',
     },
-  ];
+  ]
 
   const renderProjects = projects.map((project, index) => {
     return (
       <div className="lg:w-1/3 px-3 mb-20" key={project.id}>
         <div
           className={`relative rounded-b shadow-a-xl w-full inline-block ${
-            darkMode ? "bg-gray-800 shadow-a-xl-dark" : "bg-white"
+            darkMode ? 'bg-gray-800 shadow-a-xl-dark' : 'bg-white'
           }`}
         >
           {/* vvv Source/Live vvv */}
           <div className="absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
-            <a href={project.sourceURL}>
+            <a target="_blank" href={project.sourceURL}>
               <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-gray-700 transition-colors bg-gray-500 text-white rounded-l rounded-tr text-lg">
                 <div className="font text-lg font-medium ">Source</div>
 
                 <div className="source-arrow absolute right-0 mt-2 "></div>
               </div>
             </a>
-            <a href={project.liveURL}>
+            <a target="_blank" href={project.liveURL}>
               <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-blue-700 transition-colors bg-blue-500 text-white rounded-l rounded-tr text-lg">
                 <div className="font text-lg font-medium">Demo</div>
 
@@ -108,12 +108,12 @@ const Projects = () => {
 
           <div
             className={`mt-5 py-3 px-5  ${
-              darkMode ? "text-white" : "text-gray-800"
+              darkMode ? 'text-white' : 'text-gray-800'
             }`}
           >
             <h1
               className={`lg:text-4xl text-2xl font-semibold py-2 ${
-                darkMode ? "text-pink-600" : "text-gray-800"
+                darkMode ? 'text-pink-600' : 'text-gray-800'
               }`}
             >
               {project.name}
@@ -121,7 +121,7 @@ const Projects = () => {
             {/* lg:h-28 ensures all cards are same height on lg screens */}
             <p
               className={`lg:text-xl text-lg font-light leading-6 lg:h-28 truncate-multi mb-4 ${
-                darkMode ? "text-gray-200" : "text-gray-700"
+                darkMode ? 'text-gray-200' : 'text-gray-700'
               }`}
             >
               {project.about}
@@ -133,10 +133,10 @@ const Projects = () => {
               More Info
               <svg
                 className={`${
-                  darkMode ? "info-svg-dark" : "info-svg "
+                  darkMode ? 'info-svg-dark' : 'info-svg '
                 } transition-all duration-200 ml-1 w-8`}
                 xmlns="http://www.w3.org/2000/svg"
-                fill={darkMode ? "#1F2937" : "white"}
+                fill={darkMode ? '#1F2937' : 'white'}
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
@@ -153,9 +153,9 @@ const Projects = () => {
         {/* Modal */}
         <div
           className={`fixed ${
-            darkMode ? "bg-black-900 text-white" : "bg-white"
+            darkMode ? 'bg-black-900 text-white' : 'bg-white'
           } w-full h-screen right-0 top-0 ${
-            modal ? "right-0" : "right-full"
+            modal ? 'right-0' : 'right-full'
           } transition-all duration-200 z-30`}
         >
           <div className="mx-5 h-screen relative">
@@ -168,7 +168,7 @@ const Projects = () => {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="w-16 lg:w-28 modal-svg  transition-all duration-200"
+                className="w-16 lg:w-20 modal-svg  transition-all duration-200"
               >
                 <path
                   strokeLinecap="round"
@@ -195,10 +195,13 @@ const Projects = () => {
 
               <div
                 className={`flex absolute bottom-0 left-0 mb-5 lg:mb-14 justify-center w-full font-semibold lg:text-4xl text-2xl ${
-                  darkMode ? "text-pink-600" : "text-gray-800"
+                  darkMode ? 'text-pink-600' : 'text-gray-800'
                 } tracking-wide`}
               >
-                <a href={selectedProject && selectedProject.liveURL}>
+                <a
+                  target="_blank"
+                  href={selectedProject && selectedProject.liveURL}
+                >
                   <div className="modal-button flex px-5 cursor-pointer">
                     <svg
                       className="lg:w-12 w-8 modal-svg  transition-all duration-200"
@@ -211,7 +214,10 @@ const Projects = () => {
                     <p className="ml-5 ">Demo</p>
                   </div>
                 </a>
-                <a href={selectedProject && selectedProject.sourceURL}>
+                <a
+                  target="_blank"
+                  href={selectedProject && selectedProject.sourceURL}
+                >
                   <div className="modal-button flex px-5 cursor-pointer">
                     <svg
                       className=" lg:w-12 w-8 modal-svg  transition-all duration-200"
@@ -229,16 +235,19 @@ const Projects = () => {
           </div>
         </div>
       </div>
-    );
-  });
+    )
+  })
 
   return (
     <section className="lg:w-4/5 w-11/12 mx-auto h-full mt-10">
       {/* pt-16 offsets the navbar height */}
       <div className="">
         <article className="relative">
-          <div className="" id="projects">
-            <h1 className=" text-blue-600 text-5xl lg:text-7xl font-bold lg:mb-28 mb-16  text-center">
+          <div>
+            <h1
+              id="projects"
+              className=" text-blue-600 text-5xl lg:text-7xl font-bold lg:mb-28 mb-16  text-center pt-20"
+            >
               Projects
             </h1>
           </div>
@@ -252,7 +261,7 @@ const Projects = () => {
         </article>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

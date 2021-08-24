@@ -1,43 +1,43 @@
-import { useContext } from "react";
-import NavModal from "./NavModal";
-import DarkModeContext from "../components/context/DarkModeContext";
+import { useContext } from 'react'
+import NavModal from './NavModal'
+import DarkModeContext from '../components/context/DarkModeContext'
 
 const NavItems = ({ activeLink }) => {
-  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  const { darkMode, setDarkMode } = useContext(DarkModeContext)
 
   const handleLinkClick = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     // gets clicked element id
     // and scrolls to it
     // "home" scrolls to top
-    if (document.getElementById(e.target.text.toLowerCase()).id === "home") {
+    if (document.getElementById(e.target.text.toLowerCase()).id === 'home') {
       window.scroll({
         top: 0,
         left: 0,
-        behavior: "smooth",
-      });
+        behavior: 'smooth',
+      })
     } else if (document.getElementById(e.target.text.toLowerCase())) {
       document
         .getElementById(e.target.text.toLowerCase())
-        .scrollIntoView({ behavior: "smooth" });
+        .scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
-  const textblue = "text-blue-600";
+  const textblue = 'text-blue-600'
   return (
     <div className="flex justify-between lg:w-4/5 w-11/12 mx-auto">
       <ul
-        className={`flex items-center py-2 ${
-          darkMode ? "text-white" : "text-gray-800"
+        className={`flex items-center py-2  ${
+          darkMode ? 'text-white' : 'text-gray-800'
         }`}
       >
         <li
           className={`pr-4 border-r-2 ${
-            darkMode ? "border-gray-700" : "border-gray-300"
+            darkMode ? 'border-gray-700' : 'border-gray-300'
           } `}
         >
-          <h1 className={`text-3xl sm:text-5xl font-black ${textblue}`}>CW</h1>
+          <h1 className={`text-3xl sm:text-4xl font-black ${textblue}`}>CW</h1>
         </li>
         <button>
           <li className="pl-4 pr-4">
@@ -78,12 +78,12 @@ const NavItems = ({ activeLink }) => {
             <div
               className={`absolute block w-8 h-8 -top-1.5 rounded-full border-4  appearance-none cursor-pointer z-10 pointer-events-none ${
                 darkMode
-                  ? "right-0 border-white bg-white "
-                  : "border-gray-700 bg-gray-700"
+                  ? 'right-0 border-white bg-white '
+                  : 'border-gray-700 bg-gray-700'
               }`}
             >
               <svg
-                className={`dark-mode-svg ${darkMode ? "hidden" : ""}`}
+                className={`dark-mode-svg ${darkMode ? 'hidden' : ''}`}
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
@@ -94,7 +94,7 @@ const NavItems = ({ activeLink }) => {
               </svg>
 
               <svg
-                className={`light-mode-svg ${darkMode ? "" : "hidden"}`}
+                className={`light-mode-svg ${darkMode ? '' : 'hidden'}`}
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -109,7 +109,7 @@ const NavItems = ({ activeLink }) => {
               name="toggle"
               id="toggle"
               className={`absolute block w-8 h-8 -top-1.5 rounded-full bg-white border-4  appearance-none cursor-pointer ${
-                darkMode ? "right-0 " : ""
+                darkMode ? 'right-0 ' : ''
               }`}
               onChange={() => setDarkMode(!darkMode)}
             ></input>
@@ -117,7 +117,7 @@ const NavItems = ({ activeLink }) => {
             <label
               htmlFor="toggle"
               className={`toggle-label block overflow-hidden h-5 rounded-full  cursor-pointer ${
-                darkMode ? "bg-yellow-300" : "bg-purple-400"
+                darkMode ? 'bg-yellow-300' : 'bg-purple-400'
               }`}
             ></label>
           </div>
@@ -125,42 +125,50 @@ const NavItems = ({ activeLink }) => {
       </ul>
 
       <ul
-        className={`lg:flex lg:items-center sm:text-4xl hidden font-medium ${
-          darkMode ? "text-white" : "text-gray-800"
+        className={`lg:flex lg:items-center  text-3xl hidden font-medium ${
+          darkMode ? 'text-white' : 'text-gray-800'
         }`}
       >
-        <li className="px-2">
+        <li className="px-5">
           <a
             href="#home"
             onClick={handleLinkClick}
-            className={activeLink === 0 ? textblue : ""}
+            className={
+              activeLink === 0 ? textblue : 'text-gray-500 font-normal'
+            }
           >
             Home
           </a>
         </li>
-        <li className="px-2">
+        <li className="px-5">
           <a
             href="#about"
             onClick={handleLinkClick}
-            className={activeLink === 1 ? textblue : ""}
+            className={
+              activeLink === 1 ? textblue : 'text-gray-500 font-normal'
+            }
           >
             About
           </a>
         </li>
-        <li className="px-2">
+        <li className="px-5">
           <a
             href="#projects"
             onClick={handleLinkClick}
-            className={activeLink === 2 ? textblue : ""}
+            className={
+              activeLink === 2 ? textblue : 'text-gray-500 font-normal'
+            }
           >
             Projects
           </a>
         </li>
-        <li className="px-2">
+        <li className="pl-5">
           <a
             href="#projects"
             onClick={handleLinkClick}
-            className={activeLink === 3 ? textblue : ""}
+            className={
+              activeLink === 3 ? textblue : 'text-gray-500 font-normal'
+            }
           >
             Contact
           </a>
@@ -168,7 +176,7 @@ const NavItems = ({ activeLink }) => {
       </ul>
       <NavModal activeLink={activeLink} />
     </div>
-  );
-};
+  )
+}
 
-export default NavItems;
+export default NavItems

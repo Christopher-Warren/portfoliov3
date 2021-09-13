@@ -73,7 +73,7 @@ const Projects = () => {
           }`}
         >
           {/* vvv Source/Live vvv */}
-          <div className="absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center">
+          <div className="absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center min-w-max">
             <a target="_blank" href={project.sourceURL}>
               <div className="relative p-2 shadow-md mb-5 mt-3 hover:bg-gray-700 transition-colors bg-gray-500 text-white rounded-l rounded-tr text-lg">
                 <div className="font text-lg font-medium ">Source</div>

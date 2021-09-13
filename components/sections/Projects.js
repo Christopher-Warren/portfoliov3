@@ -62,15 +62,6 @@ const Projects = () => {
       liveURL: 'https://iptracker-phi.vercel.app/',
       sourceURL: 'https://github.com/Christopher-Warren/iptracker',
     },
-    {
-      id: 4,
-      name: 'Portfolio',
-      about:
-        'Here you can find the source code of my portfolio. I used NextJS, React, TailwindCSS, and Nodemailer as a solution for users to contact me. This portfolio was built to exemplify my skills with UX/UI best practices.',
-      imageURL: '/images/portfolio.png',
-      liveURL: 'https://www.chriswarren.tech/',
-      sourceURL: 'https://github.com/Christopher-Warren/portfoliov3',
-    },
   ]
 
   const renderProjects = projects.map((project, index) => {

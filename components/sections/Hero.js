@@ -72,7 +72,7 @@ const Hero = () => {
             darkMode ? 'text-white' : 'text-gray-900'
           }`}
         >
-          I am a Front-End Developer currently residing in Chattanooga, TN. I
+          I am an aspiring Full-stack Engineer currently residing in Chattanooga, TN. I
           have a passion for problem solving, and technology. This passion is
           what fuels my interest in Web Development.
         </p>

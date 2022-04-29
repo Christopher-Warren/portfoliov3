@@ -6,6 +6,8 @@ const Projects = () => {
   const [modal, setModal] = useState(false)
   const [selectedProject, setSelectedProject] = useState({})
 
+  const [selectedImageIdx, setSelectedImageIdx] = useState(0)
+
   const { darkMode } = useContext(DarkModeContext)
 
   const handleModal = (e, index) => {
@@ -27,11 +29,24 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 4,
+      name: 'Easydash',
+      about:
+        'A turn-based, survival(ish) RPG game, built from scratch, using - NextJS and MongoDB (for statistic collection). While the art assets are not created by me, the small game engine, itself, is. I built this project to show my skills with bringing an idea to life.',
+      imageURLS: [
+        '/images/fenrir-preview.png',
+        '/images/dev-apparel.png',
+        '/images/refurn.png',
+      ],
+      liveURL: 'https://beta-fenrir.vercel.app/',
+      sourceURL: 'https://github.com/Christopher-Warren/beta-fenrir',
+    },
+    {
       id: 0,
       name: 'Fenrir',
       about:
         'A turn-based, survival(ish) RPG game, built from scratch, using - NextJS and MongoDB (for statistic collection). While the art assets are not created by me, the small game engine, itself, is. I built this project to show my skills with bringing an idea to life.',
-      imageURL: '/images/fenrir-preview.png',
+      imageURLS: ['/images/fenrir-preview.png'],
       liveURL: 'https://beta-fenrir.vercel.app/',
       sourceURL: 'https://github.com/Christopher-Warren/beta-fenrir',
     },
@@ -40,7 +55,7 @@ const Projects = () => {
       name: 'Dev-Apparel',
       about:
         'Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database.',
-      imageURL: '/images/dev-apparel.png',
+      imageURLS: ['/images/dev-apparel.png'],
       liveURL: 'https://dev-apparel.vercel.app/',
       sourceURL: 'https://github.com/Christopher-Warren/dev-apparel',
     },
@@ -49,7 +64,7 @@ const Projects = () => {
       name: 'Refurn',
       about:
         'Refurn is a Fullstack E-commerce App, built using - React, NodeJS, Express, MongoDB, Bootstrap, and Firebase Storage as a solution to store images. Refurn was built to exemplify my abilities to work with CRUD operations. Refurn supports authentication, allowing users to login and upload furniture they wish to sell. This then enables the owner to see the listing and either approve or deny the offer.',
-      imageURL: '/images/refurn.png',
+      imageURLS: ['/images/refurn.png'],
       liveURL: 'https://refurn.herokuapp.com/',
       sourceURL: 'https://github.com/Christopher-Warren/Refurn',
     },
@@ -58,7 +73,7 @@ const Projects = () => {
       name: 'IP Tracker',
       about:
         'IP Tracker is an IP location tool, built using - React, TailwindCSS, and leaflet as a mapping solution. IP Tracker gets the users IP address on load and shows the location and ISP information. This tool features a Generate IP button which generates a random IP address, then shows the IP location and ISP info.',
-      imageURL: '/images/iptracker.png',
+      imageURLS: ['/images/iptracker.png'],
       liveURL: 'https://iptracker-phi.vercel.app/',
       sourceURL: 'https://github.com/Christopher-Warren/iptracker',
     },
@@ -93,7 +108,7 @@ const Projects = () => {
           {/* ^^^ Source/Live ^^^ */}
 
           <img
-            src={project.imageURL}
+            src={project.imageURLS[0]}
             className="w-8/12 lg:w-9/12 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md"
           />
 
@@ -170,10 +185,67 @@ const Projects = () => {
               </svg>
             </div>
 
-            <img
-              className=" mx-auto lg:h-2/5  rounded-md object-contain object-top shadow-a-xl"
-              src={selectedProject && selectedProject.imageURL}
-            ></img>
+            <div className="relative mx-auto  md:w-1/3 w-full">
+              <img
+                className=" mx-auto h-full  rounded-md object-contain object-top shadow-a-xl"
+                src={
+                  selectedProject?.imageURLS &&
+                  selectedProject.imageURLS[selectedImageIdx]
+                }
+              ></img>
+
+              <button
+                className="absolute top-0 h-full text-white bg-opacity-25 bg-gray-600 rounded"
+                onClick={(e) => {
+                  setSelectedImageIdx((prev) => {
+                    if (prev === 0) return selectedProject.imageURLS.length - 1
+
+                    return prev - 1
+                  })
+                }}
+              >
+                <svg
+                  className="h-full transform hover:scale-125 transition-transform duration-100"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+
+              <button
+                onClick={(e) => {
+                  setSelectedImageIdx((prev) => {
+                    if (prev === selectedProject.imageURLS.length - 1) return 0
+
+                    return prev + 1
+                  })
+                }}
+                className="absolute top-0 right-0 h-full  text-white  bg-opacity-25 bg-gray-600 rounded "
+              >
+                <svg
+                  className="h-full transform hover:scale-125 transition-transform duration-100"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
             <div className="mx-auto lg:w-4/6">
               <div className="">
                 <h1 className="justify-self-start text-blue-600 text-3xl lg:text-5xl font-bold text-center my-2">

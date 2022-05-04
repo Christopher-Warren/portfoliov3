@@ -36,7 +36,8 @@ const Projects = () => {
       
       Easy dash features a dashboard in which a store owner can create, modify, and delete products. The store owner
       can also upload any number of photos for each product. They can then create orders, fulfill them, upload tracking information, all while
-       viewing incoming orders real-time via the homepage.
+       viewing incoming orders real-time via the homepage. Lastly, Easydash features a fast, and powerful filtering and searching tool, created with
+       efficient MongoDB aggregation stages.
       `,
       imageURLS: [
         '/images/easydash/login.png',

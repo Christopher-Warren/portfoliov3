@@ -1,29 +1,29 @@
-import Head from "next/head";
-import { useState, useEffect } from "react";
+import Head from 'next/head'
+import { useState, useEffect } from 'react'
 
-import NavBar from "../components/NavBar";
+import NavBar from '../components/NavBar'
 
-import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
-import Projects from "../components/sections/Projects";
-import Contact from "../components/sections/Contact";
+import Hero from '../components/sections/Hero'
+import About from '../components/sections/About'
+import Projects from '../components/sections/Projects'
+import Contact from '../components/sections/Contact'
 
-import DarkModeContext from "../components/context/DarkModeContext";
+import DarkModeContext from '../components/context/DarkModeContext'
 
 export default function Home() {
-  const [activeLink, setActiveLink] = useState(0);
+  const [activeLink, setActiveLink] = useState(0)
 
-  const [darkMode, setDarkMode] = useState(false);
-  const value = { darkMode, setDarkMode };
+  const [darkMode, setDarkMode] = useState(false)
+  const value = { darkMode, setDarkMode }
 
   return (
     <DarkModeContext.Provider value={value}>
       <Head>
         <title>
-          {(activeLink === 0 && "Home") ||
-            (activeLink === 1 && "About") ||
-            (activeLink === 2 && "Projects") ||
-            (activeLink === 3 && "Contact")}{" "}
+          {(activeLink === 0 && 'Home') ||
+            (activeLink === 1 && 'About') ||
+            (activeLink === 2 && 'Projects') ||
+            (activeLink === 3 && 'Contact')}{' '}
           | Christopher Warren
         </title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -46,7 +46,7 @@ export default function Home() {
 
       <div
         className={`sm:pt-20 pt-16 ${
-          darkMode ? "bg-black-900" : "bg-white"
+          darkMode ? 'bg-black-900' : 'bg-white'
         } transition-all duration-500`}
       >
         <Hero />
@@ -58,7 +58,7 @@ export default function Home() {
         <About />
         <div className="relative hidden lg:block">
           <div className="absolute right-0 -my-28">
-            <img style={{ height: "30rem" }} src="/thinking-dude.svg" />
+            <img style={{ height: '30rem' }} src="/thinking-dude.svg" />
           </div>
         </div>
         <Projects />
@@ -72,14 +72,14 @@ export default function Home() {
 
       <NavBar activeLink={activeLink} setActiveLink={setActiveLink} />
       <footer
-        className={`h-20 w-full ${darkMode ? "bg-black-900" : "bg-white"}`}
+        className={`h-20 w-full ${darkMode ? 'bg-black-900' : 'bg-white'}`}
       >
         <div className="pr-4  border-gray-300">
-          <h1 className={`text-7xl font-black text-blue-600 text-center `}>
-            CW
+          <h1 className={`text-xl font-black text-blue-600 text-center `}>
+            -Christopher Warren
           </h1>
         </div>
       </footer>
     </DarkModeContext.Provider>
-  );
+  )
 }

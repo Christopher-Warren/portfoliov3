@@ -31,15 +31,26 @@ const Projects = () => {
     {
       id: 4,
       name: 'Easydash',
-      about:
-        'A turn-based, survival(ish) RPG game, built from scratch, using - NextJS and MongoDB (for statistic collection). While the art assets are not created by me, the small game engine, itself, is. I built this project to show my skills with bringing an idea to life.',
+      about: `Easydash is a Fullstack, GraphQL powered inventory management system; 
+      Built using Typescript, Node, Express, AWS S3, MongoDB, GraphQL, React, Redux, React-router, and TailwindCSS.
+      
+      Easy dash features a dashboard in which a store owner can create, modify, and delete products. The store owner
+      can also upload any number of photos for each product. They can then create orders, fulfill them, upload tracking information, all while
+       viewing incoming orders real-time via the homepage.
+      `,
       imageURLS: [
-        '/images/fenrir-preview.png',
-        '/images/dev-apparel.png',
-        '/images/refurn.png',
+        '/images/easydash/login.png',
+        '/images/easydash/dashboard.png',
+        '/images/easydash/products.png',
+        '/images/easydash/productsfilter.png',
+        '/images/easydash/orders.png',
+        '/images/easydash/orders2.png',
+        '/images/easydash/createorder.png',
+        '/images/easydash/mutationexample.png',
+        '/images/easydash/queryexample.png',
       ],
-      liveURL: 'https://beta-fenrir.vercel.app/',
-      sourceURL: 'https://github.com/Christopher-Warren/beta-fenrir',
+      liveURL: 'https://easydash-deploy-test.herokuapp.com/',
+      sourceURL: 'https://github.com/Christopher-Warren/easydash',
     },
     {
       id: 0,
@@ -109,7 +120,7 @@ const Projects = () => {
 
           <img
             src={project.imageURLS[0]}
-            className="w-8/12 lg:w-9/12 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md"
+            className="w-8/12 lg:w-9/12 lg:h-52 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md"
           />
 
           <div
@@ -248,10 +259,10 @@ const Projects = () => {
             </div>
             <div className="mx-auto lg:w-4/6">
               <div className="">
-                <h1 className="justify-self-start text-blue-600 text-3xl lg:text-5xl font-bold text-center my-2">
+                <h1 className="justify-self-start text-blue-600 text-3xl lg:text-4xl font-bold text-center my-2">
                   {selectedProject && selectedProject.name}
                 </h1>
-                <p className=" leading-tight md:text-3xl font-light">
+                <p className=" leading-tight text-xl font-light max-w-2xl mx-auto indent-2">
                   {selectedProject && selectedProject.about}
                 </p>
               </div>
@@ -309,7 +320,7 @@ const Projects = () => {
           <div>
             <h1
               id="projects"
-              className=" text-blue-600 text-5xl lg:text-7xl font-bold lg:mb-28 mb-16  text-center pt-20"
+              className=" text-blue-600 text-5xl  font-bold lg:mb-28 mb-16  text-center pt-20"
             >
               Projects
             </h1>

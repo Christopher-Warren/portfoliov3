@@ -1,64 +1,64 @@
-import { useState, useEffect, useContext } from "react";
-import axios from "axios";
+import { useState, useEffect, useContext } from 'react'
+import axios from 'axios'
 
-import DarkModeContext from "../context/DarkModeContext";
+import DarkModeContext from '../context/DarkModeContext'
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
 
-  const [messageStatus, setMessageStatus] = useState({});
-  const [alert, setAlert] = useState(false);
+  const [messageStatus, setMessageStatus] = useState({})
+  const [alert, setAlert] = useState(false)
 
-  const { darkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(DarkModeContext)
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!name) {
-      document.getElementById("name").focus();
+      document.getElementById('name').focus()
     } else if (!email) {
-      document.getElementById("email").focus();
+      document.getElementById('email').focus()
     } else if (!message) {
-      document.getElementById("message").focus();
+      document.getElementById('message').focus()
     } else {
-      const { data } = await axios.post("/api/contact", {
+      const { data } = await axios.post('/api/contact', {
         name: name,
         email: email,
         message: message,
-      });
-      setMessageStatus(data);
-      setAlert(true);
+      })
+      setMessageStatus(data)
+      setAlert(true)
       setTimeout(() => {
-        setAlert(false);
-        setMessageStatus({});
-        setName("");
-        setEmail("");
-        setMessage("");
-      }, 10000);
+        setAlert(false)
+        setMessageStatus({})
+        setName('')
+        setEmail('')
+        setMessage('')
+      }, 10000)
     }
-  };
+  }
 
   const renderStatus = () => {
-    let status;
+    let status
     if (messageStatus.error) {
-      status = "Server Error";
-      return status;
+      status = 'Server Error'
+      return status
     } else if (messageStatus.success) {
-      status = "Message Sent";
-      return status;
+      status = 'Message Sent'
+      return status
     } else {
-      status = "Send Message";
-      return status;
+      status = 'Send Message'
+      return status
     }
-  };
+  }
 
   return (
-    <div id="contact" className=" w-11/12 lg:w-4/5 mx-auto pb-20">
+    <div id="contact" className=" w-11/12 lg:w-3/5 mx-auto pb-20">
       <div className="">
         <h1
-          className=" text-blue-600 text-6xl lg:text-7xl font-bold my-14 lg:my-10 lg:mb-20 text-center"
+          className=" text-blue-600 text-5xl font-bold my-14 lg:my-10 lg:mb-20 text-center"
           id="projects"
         >
           Contact
@@ -66,7 +66,7 @@ const Contact = () => {
       </div>
       <div
         className={`relative w-full  rounded shadow-a-xl px-5 lg:px-10 pb-10 p-14 ${
-          darkMode ? "bg-gray-800" : "bg-white"
+          darkMode ? 'bg-gray-800' : 'bg-white'
         }`}
       >
         <div className="absolute top-0 left-0 mx-5 lg:mx-10 -my-5 text-white text-xl ">
@@ -127,7 +127,7 @@ const Contact = () => {
           <div className="relative lg:w-1/2 pr-0 lg:pr-10 ">
             <input
               className={`rounded ${
-                darkMode ? "bg-gray-900 text-white" : "bg-gray-200"
+                darkMode ? 'bg-gray-900 text-white' : 'bg-gray-200'
               } text-2xl lg:text-3xl name-input focus:border-gray-900 pt-5 px-4 pb-2 w-full`}
               type="text"
               name="name"
@@ -138,18 +138,18 @@ const Contact = () => {
             />
             <label
               className={`absolute text-3xl  left-2 bottom-2 transition-all px-2 pb-1 text-gray-600 pointer-events-none name-label ${
-                name && "shrink-label"
+                name && 'shrink-label'
               }`}
               htmlFor="name"
             >
-              Name{" "}
+              Name{' '}
             </label>
           </div>
 
           <div className="relative lg:w-1/2 ">
             <input
               className={`${
-                darkMode ? "bg-gray-900 text-white" : "bg-gray-200"
+                darkMode ? 'bg-gray-900 text-white' : 'bg-gray-200'
               } rounded text-2xl lg:text-3xl name-input focus:border-gray-900 mt-5 lg:mt-0 pt-5 px-4 pb-2 w-full`}
               type="text"
               name="email"
@@ -160,18 +160,18 @@ const Contact = () => {
             />
             <label
               className={`absolute name-label text-3xl  left-2 bottom-2 transition-all px-2 pb-1 text-gray-600  pointer-events-none ${
-                email && "shrink-label"
+                email && 'shrink-label'
               }`}
               htmlFor="name"
             >
-              Email{" "}
+              Email{' '}
             </label>
           </div>
 
           <div className="relative  w-full mt-10">
             <textarea
               className={`rounded text-2xl lg:text-3xl name-input focus:border-gray-900 pt-8 px-4 pb-2 w-full ${
-                darkMode ? "bg-gray-900 text-white" : "bg-gray-200"
+                darkMode ? 'bg-gray-900 text-white' : 'bg-gray-200'
               }`}
               type="text"
               name="message"
@@ -183,11 +183,11 @@ const Contact = () => {
             />
             <label
               className={`absolute name-label text-3xl  left-2 top-2 transition-all px-2 text-gray-600 pointer-events-none ${
-                message && "shrink-label"
+                message && 'shrink-label'
               }`}
               htmlFor="name"
             >
-              Message{" "}
+              Message{' '}
             </label>
           </div>
 
@@ -195,13 +195,13 @@ const Contact = () => {
             <button
               type="submit"
               className={`rounded shadow-a-lg  text-gray-900 hover:text-white ${
-                darkMode ? "bg-gray-700" : "bg-white"
+                darkMode ? 'bg-gray-700' : 'bg-white'
               }  transition-all absolute right-5 lg:right-10 -bottom-16 w-48 text-xl cursor-pointer flex items-center justify-between`}
             >
               <div
                 className={`inline  p-2 h-10 w-3/12 contact-button  transition-all rounded ${
-                  alert && "message-sent"
-                } ${messageStatus.error ? "bg-red-600" : "bg-blue-600"}`}
+                  alert && 'message-sent'
+                } ${messageStatus.error ? 'bg-red-600' : 'bg-blue-600'}`}
               >
                 <svg
                   className="absolute text-white"
@@ -220,7 +220,7 @@ const Contact = () => {
                 </svg>
                 <p
                   className={`inline absolute right-2 text-xl ${
-                    darkMode ? "text-white" : ""
+                    darkMode ? 'text-white' : ''
                   }`}
                 >
                   {renderStatus()}
@@ -231,7 +231,7 @@ const Contact = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* li {
+  list-style: none;
+} */
+
+.indent-1 {
+  text-indent: 2rem;
+}
+
+.indent-2 {
+  text-indent: 3rem;
+}

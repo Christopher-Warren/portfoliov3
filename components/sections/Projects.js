@@ -197,7 +197,7 @@ const Projects = () => {
               </svg>
             </div>
 
-            <div className="relative mx-auto  md:w-1/3 w-full">
+            <div className="relative mx-auto overflow-hidden md:w-1/3 w-full">
               <img
                 className=" mx-auto h-min  rounded-md object-contain object-top shadow-a-xl"
                 src={

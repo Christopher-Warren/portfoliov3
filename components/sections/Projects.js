@@ -197,9 +197,9 @@ const Projects = () => {
               </svg>
             </div>
 
-            <div className="relative mx-auto  md:w-1/3 w-full">
+            <div className="relative mx-auto  md:w-1/3 w-full overflow-y-auto">
               <img
-                className=" mx-auto h-full  rounded-md object-contain object-top shadow-a-xl"
+                className=" mx-auto h-min  rounded-md object-contain object-top shadow-a-xl"
                 src={
                   selectedProject?.imageURLS &&
                   selectedProject.imageURLS[selectedImageIdx]

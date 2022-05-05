@@ -33,15 +33,7 @@ const About = () => {
             solving challenging problems, which is something I not only enjoy,
             but something I'm skilled in. The software ecosystem is constantly
             evolving and I find it very exciting that there is always something
-            new to learn. The languages I use the most are{' '}
-            <bold className="font-medium">
-              Javascript, and Typescript.
-            </bold>{' '}
-            Some technologies/frameworks that I work with are{' '}
-            <bold className="font-medium">
-              NextJS, React, Redux, NodeJS, MongoDB, Express, Bootstrap, and
-              TailwindCSS.
-            </bold>{' '}
+            new to learn.
           </p>
           <br />
           <div

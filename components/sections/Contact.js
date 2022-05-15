@@ -100,7 +100,7 @@ const Contact = () => {
               <div className="lg:inline hidden px-2">LinkedIn</div>
             </button>
           </a>
-          <a href="/assets/Christopher-Warren-Resume.pdf" target="_blank">
+          <a href="/assets/Christopher_Warren_Resume.pdf" target="_blank">
             <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
               <svg
                 className="inline w-6 h-6"

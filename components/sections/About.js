@@ -30,8 +30,7 @@ const About = () => {
             Engineering.
             <br />
             <br /> Software Engineering allows me to utilize my strength with
-            solving challenging problems, which is something I not only enjoy,
-            but something I'm skilled in. The software ecosystem is constantly
+            solving challenging problems. The software ecosystem is constantly
             evolving and I find it very exciting that there is always something
             new to learn.
           </p>
@@ -83,6 +82,7 @@ const About = () => {
                     <li>GraphQL</li>
                     <li>Next.js</li>
                     <li>MongoDB</li>
+                    <li>MySQL</li>
                     <li>AWS S3</li>
                     <li>Cloud Firestore</li>
                   </ol>

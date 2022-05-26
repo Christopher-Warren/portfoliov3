@@ -72,9 +72,9 @@ const Hero = () => {
             darkMode ? 'text-white' : 'text-gray-900'
           }`}
         >
-          I am an aspiring Full-stack/ Frontend Engineer currently residing in
-          Chattanooga, TN. I have a passion for problem solving, and technology.
-          This passion is what fuels my hunger in software engineering.
+          I am a Frontend Engineer currently residing in Chattanooga, TN. I have
+          a passion for problem solving, and technology. This passion is what
+          fuels my hunger in software engineering.
         </p>
         <button
           className="hero-button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600  mt-5 lg:mt-10 cursor-pointer "

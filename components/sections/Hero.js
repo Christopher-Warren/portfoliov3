@@ -61,7 +61,7 @@ const Hero = () => {
       id="home"
       className="lg:h-full flex flex-col lg:flex-row lg:items-center lg:justify-between lg:w-4/5 w-11/12 mx-auto"
     >
-      <article className="lg:w-1/2 mb-4 md:mb-8 lg:mb-56">
+      <article className="lg:w-1/2 mb-4 md:mb-8 lg:mb-56" role="main">
         <h1 className="text-blue-600 text-5xl font-bold my-5 lg:my-10 lg:text-7xl">
           Christopher
           <br /> Warren
@@ -77,6 +77,7 @@ const Hero = () => {
           fuels my hunger in software engineering.
         </p>
         <button
+          aria-label="Anchor"
           className="hero-button flex max-w-max items-center text-3xl lg:text-5xl font-semibold text-blue-600  mt-5 lg:mt-10 cursor-pointer "
           onClick={() =>
             document
@@ -105,13 +106,17 @@ const Hero = () => {
           <p>See Projects</p>
         </button>
       </article>
-      <div className="flex relative h-64 lg:h-4/5 z-10 ">
+      <div role="banner" className="flex relative h-64 lg:h-4/5 z-10 ">
         <div className=" bg-gray-800 absolute w-2/5 h-3/6 text-pink-600">
           <div className="bg-gray-700 h-6 md:h-8"></div>
           <h2 className="px-1 md:pt-2 md:px-2 md:text-2xl leading-5"></h2>
         </div>
 
-        <img className="mx-auto h-full z-0" src="/programmer2.svg" />
+        <img
+          alt="Programmer thinking"
+          className="mx-auto h-full z-0"
+          src="/programmer2.svg"
+        />
       </div>
     </section>
   )

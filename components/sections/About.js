@@ -5,9 +5,9 @@ const About = () => {
   const { darkMode } = useContext(DarkModeContext)
 
   return (
-    <section className="lg:w-4/5 w-11/12 mx-auto pb-20" id="about">
+    <section id="about" aria-label="about">
       {/* pt-16 offsets the navbar height */}
-      <div className="lg:pt-24">
+      <div className="lg:pt-24 lg:w-4/5 w-11/12 mx-auto pb-20">
         <article className="pt-10">
           <div className="relative ">
             {/* <img className="absolute test-2" src="/about.svg" /> */}
@@ -50,16 +50,16 @@ const About = () => {
             >
               <div className="">
                 <div className="mt-5">
+                  <h2 className="text-2xl font-normal">Languages</h2>
                   <ol>
-                    <h3 className="text-2xl font-normal">Languages</h3>
                     <li>Typescript</li>
                     <li>Javascript</li>
                   </ol>
                 </div>
 
                 <div className="mt-5">
+                  <h2 className="text-2xl font-normal">Frontend</h2>
                   <ol>
-                    <h3 className="text-2xl font-normal">Frontend</h3>
                     <li>React</li>
                     <li>React Router</li>
                     <li>Redux</li>
@@ -75,8 +75,8 @@ const About = () => {
               </div>
               <div className="">
                 <div className="mt-5">
+                  <h2 className="text-2xl font-normal">Backend</h2>
                   <ol>
-                    <h3 className="text-2xl font-normal">Backend</h3>
                     <li>NodeJS</li>
                     <li>Express</li>
                     <li>GraphQL</li>
@@ -88,8 +88,8 @@ const About = () => {
                   </ol>
                 </div>
                 <div className="mt-5">
+                  <h3 className="text-2xl font-normal">Other</h3>
                   <ol>
-                    <h3 className="text-2xl font-normal">Other</h3>
                     <li>VS Code</li>
                     <li>Git</li>
                     <li>Heroku</li>
@@ -101,6 +101,16 @@ const About = () => {
             </div>
           </div>
         </article>
+      </div>
+
+      <div className="relative hidden lg:block">
+        <div className="absolute right-0 -my-28">
+          <img
+            alt="thinking man"
+            style={{ height: '30rem' }}
+            src="/thinking-dude.svg"
+          />
+        </div>
       </div>
     </section>
   )

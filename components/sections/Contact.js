@@ -55,12 +55,13 @@ const Contact = () => {
   }
 
   return (
-    <div id="contact" className=" w-11/12 lg:w-3/5 mx-auto pb-20">
+    <section
+      id="contact"
+      aria-label="contact"
+      className=" w-11/12 lg:w-3/5 mx-auto pb-20"
+    >
       <div className="">
-        <h1
-          className=" text-blue-600 text-5xl font-bold my-14 lg:my-10 lg:mb-20 text-center"
-          id="projects"
-        >
+        <h1 className=" text-blue-600 text-5xl font-bold my-14 lg:my-10 lg:mb-20 text-center">
           Contact
         </h1>
       </div>
@@ -71,7 +72,10 @@ const Contact = () => {
       >
         <div className="absolute top-0 left-0 mx-5 lg:mx-10 -my-5 text-white text-xl ">
           <a href="mailto:chrisalmith@gmail.com">
-            <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
+            <button
+              aria-label="Send mail"
+              className="py-2 px-3 bg-blue-600 rounded shadow-md hover:bg-blue-600"
+            >
               <svg
                 className="inline w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +92,10 @@ const Contact = () => {
             href="https://www.linkedin.com/in/christopher-warren-188b2180/"
             target="_blank"
           >
-            <button className="py-2 px-3 bg-blue-500 rounded mx-2 lg:mx-5 shadow-md hover:bg-blue-600">
+            <button
+              aria-label="Chris Warren LinkedIn Link"
+              className="py-2 px-3 bg-blue-600 rounded mx-2 lg:mx-5 shadow-md hover:bg-blue-600"
+            >
               <svg
                 className="inline w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +108,10 @@ const Contact = () => {
             </button>
           </a>
           <a href="/assets/Christopher_Warren_Resume.pdf" target="_blank">
-            <button className="py-2 px-3 bg-blue-500 rounded shadow-md hover:bg-blue-600">
+            <button
+              aria-label="Open resume"
+              className="py-2 px-3 bg-blue-600 rounded shadow-md hover:bg-blue-600"
+            >
               <svg
                 className="inline w-6 h-6"
                 xmlns="http://www.w3.org/2000/svg"
@@ -137,9 +147,10 @@ const Contact = () => {
               disabled={alert ? true : false}
             />
             <label
-              className={`absolute text-3xl  left-2 bottom-2 transition-all px-2 pb-1 text-gray-600 pointer-events-none name-label ${
+              className={`absolute text-3xl  left-2 bottom-2 transition-all px-2 pb-1 pointer-events-none name-label ${
                 name && 'shrink-label'
-              }`}
+              }
+              ${darkMode ? 'text-gray-100' : ' text-gray-900'}`}
               htmlFor="name"
             >
               Name{' '}
@@ -159,10 +170,11 @@ const Contact = () => {
               disabled={alert ? true : false}
             />
             <label
-              className={`absolute name-label text-3xl  left-2 bottom-2 transition-all px-2 pb-1 text-gray-600  pointer-events-none ${
+              className={`absolute name-label text-3xl  left-2 bottom-2 transition-all px-2 pb-1   pointer-events-none ${
                 email && 'shrink-label'
-              }`}
-              htmlFor="name"
+              }
+              ${darkMode ? 'text-gray-100' : ' text-gray-900'}`}
+              htmlFor="email"
             >
               Email{' '}
             </label>
@@ -182,10 +194,12 @@ const Contact = () => {
               disabled={alert ? true : false}
             />
             <label
-              className={`absolute name-label text-3xl  left-2 top-2 transition-all px-2 text-gray-600 pointer-events-none ${
+              className={`absolute name-label text-3xl  left-2 top-2 transition-all px-2  pointer-events-none ${
                 message && 'shrink-label'
-              }`}
-              htmlFor="name"
+              }
+              ${darkMode ? 'text-gray-100' : ' text-gray-900'}
+              `}
+              htmlFor="message"
             >
               Message{' '}
             </label>
@@ -193,9 +207,12 @@ const Contact = () => {
 
           <div className="relative w-full h-7">
             <button
+              aria-label="Submit message"
               type="submit"
-              className={`rounded shadow-a-lg  text-gray-900 hover:text-white ${
-                darkMode ? 'bg-gray-700' : 'bg-white'
+              className={`rounded shadow-a-lg   hover:text-white ${
+                darkMode
+                  ? 'bg-gray-700 text-gray-100'
+                  : 'bg-white text-gray-900'
               }  transition-all absolute right-5 lg:right-10 -bottom-16 w-48 text-xl cursor-pointer flex items-center justify-between`}
             >
               <div
@@ -230,7 +247,7 @@ const Contact = () => {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   )
 }
 

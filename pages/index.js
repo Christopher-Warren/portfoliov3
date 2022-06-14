@@ -50,23 +50,19 @@ export default function Home() {
         } transition-all duration-500`}
       >
         <Hero />
-        <div className="relative hidden lg:block">
+        <div role="complementary" className="relative hidden lg:block">
           <div className="absolute -my-28">
-            <img className="h-96" src="/sideill.svg" />
+            <img
+              alt="woman sitting on forest illustration"
+              className="h-96"
+              src="/sideill.svg"
+            />
           </div>
         </div>
         <About />
-        <div className="relative hidden lg:block">
-          <div className="absolute right-0 -my-28">
-            <img style={{ height: '30rem' }} src="/thinking-dude.svg" />
-          </div>
-        </div>
+
         <Projects />
-        <div className="relative hidden lg:block">
-          <div className="absolute -my-28  ">
-            <img className="h-96" src="/undraw_contact.svg" />
-          </div>
-        </div>
+
         <Contact />
       </div>
 

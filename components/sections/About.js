@@ -1,8 +1,8 @@
-import { useContext } from 'react'
-import DarkModeContext from '../context/DarkModeContext'
+import { useContext } from "react";
+import DarkModeContext from "../context/DarkModeContext";
 
 const About = () => {
-  const { darkMode } = useContext(DarkModeContext)
+  const { darkMode } = useContext(DarkModeContext);
 
   return (
     <section id="about" aria-label="about">
@@ -17,10 +17,9 @@ const About = () => {
               About
             </h1>
           </div>
-
           <p
-            className={`text-xl lg:text-2xl font-light max-w-5xl mx-auto lg:leading-snug ${
-              darkMode ? 'text-white' : 'text-gray-800'
+            className={`text-xl lg:text-2xl font-light mb-5 max-w-5xl mx-auto lg:leading-snug  ${
+              darkMode ? "text-white" : "text-gray-800"
             }`}
           >
             I have always been fascinated by technology and using it creatively.
@@ -32,12 +31,18 @@ const About = () => {
             <br /> Software Engineering allows me to utilize my strength with
             solving challenging problems. The software ecosystem is constantly
             evolving and I find it very exciting that there is always something
-            new to learn.
+            new to learn. <br />
+            <br />
+            My experience includes, but is not limited to: creating scalable and
+            reusable React components referencing Figma mockups, managing
+            component state, handling calls to APIs, facilitating software
+            deployment, reviewing, creating, and merging pull requests, all
+            while staying up to date on industry best practices.
           </p>
-          <br />
+
           <div
             className={`max-w-5xl mx-auto text-gray-800 ${
-              darkMode ? 'text-white' : 'text-gray-800'
+              darkMode ? "text-white" : "text-gray-800"
             }`}
           >
             <h1 className={`text-blue-600 text-4xl mb-5 font-bold text-center`}>
@@ -45,7 +50,7 @@ const About = () => {
             </h1>
             <div
               className={`flex justify-evenly ${
-                darkMode ? 'text-white' : 'text-gray-800'
+                darkMode ? "text-white" : "text-gray-800"
               }`}
             >
               <div className="">
@@ -61,6 +66,7 @@ const About = () => {
                   <h2 className="text-2xl font-normal">Frontend</h2>
                   <ol>
                     <li>React</li>
+                    <li>React Native</li>
                     <li>React Router</li>
                     <li>Redux</li>
                     <li>Next.js</li>
@@ -107,13 +113,13 @@ const About = () => {
         <div className="absolute right-0 -my-28">
           <img
             alt="thinking man"
-            style={{ height: '30rem' }}
+            style={{ height: "30rem" }}
             src="/thinking-dude.svg"
           />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

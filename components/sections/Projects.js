@@ -1,36 +1,61 @@
-import { useState, useContext } from 'react'
+import { useState, useContext } from "react";
 
-import DarkModeContext from '../context/DarkModeContext'
+import DarkModeContext from "../context/DarkModeContext";
 
 const Projects = () => {
-  const [modal, setModal] = useState(false)
-  const [selectedProject, setSelectedProject] = useState({})
+  const [modal, setModal] = useState(false);
+  const [selectedProject, setSelectedProject] = useState({});
 
-  const [selectedImageIdx, setSelectedImageIdx] = useState(0)
+  const [selectedImageIdx, setSelectedImageIdx] = useState(0);
 
-  const { darkMode } = useContext(DarkModeContext)
+  const [showFullscreenImage, setShowFullscreenImage] = useState(false);
+
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleModal = (e, index) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setSelectedProject(projects[index])
-    setModal(!modal)
+    setSelectedProject(projects[index]);
+    setModal(!modal);
 
     // prevents content from shifting around
     // when modal is shown
     if (modal) {
-      document.body.style.overflow = 'visible'
+      document.body.style.overflow = "visible";
     } else {
       setTimeout(() => {
-        document.body.style.overflow = 'hidden'
-      }, 200)
+        document.body.style.overflow = "hidden";
+      }, 200);
     }
-  }
+  };
 
   const projects = [
     {
+      id: 5,
+      name: "GeoChat",
+      about: `GeoChat is an Android/iPhone app built using React native. Implemented public APIs to give each user a unique identifier and name. Utilized Firebase Auth to authenticate users by their phone number.
+        Developed an API which tracks the users location, allowing users to anonymously view other users that are nearby. This gives them the option to initiate an SMS conversation which is terminated once users are no longer in range.
+     
+         `,
+      imageURLS: [
+        "/images/GeoChat/5.png",
+        "/images/GeoChat/2.png",
+        "/images/GeoChat/3.png",
+        "/images/GeoChat/4.png",
+        "/images/GeoChat/5.png",
+        "/images/GeoChat/6.png",
+        "/images/GeoChat/7.png",
+        "/images/GeoChat/8.png",
+        "/images/GeoChat/9.png",
+        "/images/GeoChat/10.png",
+        "/images/GeoChat/11.png",
+      ],
+      liveURL: "https://iptracker-phi.vercel.app/",
+      sourceURL: "https://github.com/Christopher-Warren/iptracker",
+    },
+    {
       id: 4,
-      name: 'Easydash',
+      name: "Easydash",
       about: `Easydash is a Fullstack, GraphQL powered inventory management system; 
       Built using Typescript, Node, Express, AWS S3, MongoDB, GraphQL, React, Redux, React-router, and TailwindCSS.
       
@@ -40,69 +65,69 @@ const Projects = () => {
        efficient MongoDB aggregation stages.
       `,
       imageURLS: [
-        '/images/easydash/login.png',
-        '/images/easydash/dashboard.png',
-        '/images/easydash/products.png',
-        '/images/easydash/productsfilter.png',
-        '/images/easydash/orders.png',
-        '/images/easydash/orders2.png',
-        '/images/easydash/createorder.png',
-        '/images/easydash/mutationexample.png',
-        '/images/easydash/queryexample.png',
+        "/images/easydash/login.png",
+        "/images/easydash/dashboard.png",
+        "/images/easydash/products.png",
+        "/images/easydash/productsfilter.png",
+        "/images/easydash/orders.png",
+        "/images/easydash/orders2.png",
+        "/images/easydash/createorder.png",
+        "/images/easydash/mutationexample.png",
+        "/images/easydash/queryexample.png",
       ],
-      liveURL: 'https://easydash-deploy-test.herokuapp.com/',
-      sourceURL: 'https://github.com/Christopher-Warren/easydash',
+      liveURL: "https://easydash-deploy-test.herokuapp.com/",
+      sourceURL: "https://github.com/Christopher-Warren/easydash",
     },
     {
       id: 0,
-      name: 'Fenrir',
+      name: "Fenrir",
       about:
-        'A turn-based, survival(ish) RPG game, built from scratch, using - NextJS and MongoDB (for statistic collection). While the art assets are not created by me, the small game engine, itself, is. I built this project to show my skills with bringing an idea to life.',
-      imageURLS: ['/images/fenrir-preview.png'],
-      liveURL: 'https://beta-fenrir.vercel.app/',
-      sourceURL: 'https://github.com/Christopher-Warren/beta-fenrir',
+        "A turn-based, survival(ish) RPG game, built from scratch, using - NextJS and MongoDB (for statistic collection). While the art assets are not created by me, the small game engine, itself, is. I built this project to show my skills with bringing an idea to life.",
+      imageURLS: ["/images/fenrir-preview.png"],
+      liveURL: "https://beta-fenrir.vercel.app/",
+      sourceURL: "https://github.com/Christopher-Warren/beta-fenrir",
     },
     {
       id: 1,
-      name: 'Dev-Apparel',
+      name: "Dev-Apparel",
       about:
-        'Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database.',
-      imageURLS: ['/images/dev-apparel.png'],
-      liveURL: 'https://dev-apparel.vercel.app/',
-      sourceURL: 'https://github.com/Christopher-Warren/dev-apparel',
+        "Dev-Apparel is a Fullstack E-commerce App, built using - NextJS, MongoDB, React, Stripe, and Bootstrap. Dev-Apparel uses CRUD operations to populate the storefront with items stored in a Mongo database.",
+      imageURLS: ["/images/dev-apparel.png"],
+      liveURL: "https://dev-apparel.vercel.app/",
+      sourceURL: "https://github.com/Christopher-Warren/dev-apparel",
     },
     {
       id: 2,
-      name: 'Refurn',
+      name: "Refurn",
       about:
-        'Refurn is a Fullstack E-commerce App, built using - React, NodeJS, Express, MongoDB, Bootstrap, and Firebase Storage as a solution to store images. Refurn was built to exemplify my abilities to work with CRUD operations. Refurn supports authentication, allowing users to login and upload furniture they wish to sell. This then enables the owner to see the listing and either approve or deny the offer.',
-      imageURLS: ['/images/refurn.png'],
-      liveURL: 'https://refurn.herokuapp.com/',
-      sourceURL: 'https://github.com/Christopher-Warren/Refurn',
+        "Refurn is a Fullstack E-commerce App, built using - React, NodeJS, Express, MongoDB, Bootstrap, and Firebase Storage as a solution to store images. Refurn was built to exemplify my abilities to work with CRUD operations. Refurn supports authentication, allowing users to login and upload furniture they wish to sell. This then enables the owner to see the listing and either approve or deny the offer.",
+      imageURLS: ["/images/refurn.png"],
+      liveURL: "https://refurn.herokuapp.com/",
+      sourceURL: "https://github.com/Christopher-Warren/Refurn",
     },
     {
       id: 3,
-      name: 'IP Tracker',
+      name: "IP Tracker",
       about:
-        'IP Tracker is an IP location tool, built using - React, TailwindCSS, and leaflet as a mapping solution. IP Tracker gets the users IP address on load and shows the location and ISP information. This tool features a Generate IP button which generates a random IP address, then shows the IP location and ISP info.',
-      imageURLS: ['/images/iptracker.png'],
-      liveURL: 'https://iptracker-phi.vercel.app/',
-      sourceURL: 'https://github.com/Christopher-Warren/iptracker',
+        "IP Tracker is an IP location tool, built using - React, TailwindCSS, and leaflet as a mapping solution. IP Tracker gets the users IP address on load and shows the location and ISP information. This tool features a Generate IP button which generates a random IP address, then shows the IP location and ISP info.",
+      imageURLS: ["/images/iptracker.png"],
+      liveURL: "https://iptracker-phi.vercel.app/",
+      sourceURL: "https://github.com/Christopher-Warren/iptracker",
     },
-  ]
+  ];
 
   const renderProjects = projects.map((project, index) => {
     return (
       <div className="lg:w-1/3 px-3 mb-20" key={project.id}>
         <div
           className={`relative rounded-b shadow-a-xl w-full inline-block ${
-            darkMode ? 'bg-gray-800 shadow-a-xl-dark' : 'bg-white'
+            darkMode ? "bg-gray-800 shadow-a-xl-dark" : "bg-white"
           }`}
         >
           {/* vvv Source/Live vvv */}
           <div className="absolute md:w-2/12 w-3/12 right-0 -mr-4 text-center min-w-max">
             <a
-              aria-label={project.name + ' source'}
+              aria-label={project.name + " source"}
               target="_blank"
               href={project.sourceURL}
             >
@@ -113,7 +138,7 @@ const Projects = () => {
               </div>
             </a>
             <a
-              aria-label={project.name + ' demo'}
+              aria-label={project.name + " demo"}
               target="_blank"
               href={project.liveURL}
             >
@@ -128,19 +153,20 @@ const Projects = () => {
           {/* ^^^ Source/Live ^^^ */}
 
           <img
-            alt={project.name + ' preview'}
+            alt={project.name + " preview"}
             src={project.imageURLS[0]}
-            className="w-8/12 lg:w-9/12 lg:h-52 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md"
+            onClick={(e) => handleModal(e, index)}
+            className="w-8/12 lg:w-9/12 lg:h-52 -my-5 ml-5 shadow-a-xl2 object-cover object-left-top rounded-md cursor-pointer"
           />
 
           <div
             className={`mt-5 py-3 px-5  ${
-              darkMode ? 'text-white' : 'text-gray-800'
+              darkMode ? "text-white" : "text-gray-800"
             }`}
           >
             <h1
               className={`lg:text-4xl text-2xl font-semibold py-2 ${
-                darkMode ? 'text-pink-600' : 'text-gray-800'
+                darkMode ? "text-pink-600" : "text-gray-800"
               }`}
             >
               {project.name}
@@ -148,24 +174,24 @@ const Projects = () => {
             {/* lg:h-28 ensures all cards are same height on lg screens */}
             <p
               className={`lg:text-xl text-lg font-light leading-6 lg:h-28 truncate-multi mb-4 ${
-                darkMode ? 'text-gray-200' : 'text-gray-700'
+                darkMode ? "text-gray-200" : "text-gray-700"
               }`}
             >
               {project.about}
             </p>
             <div
               className={`z-30 info-button flex align-middle cursor-pointer text-2xl max-w-min whitespace-nowrap rounded px-2 py-1 font-semibold ${
-                darkMode ? 'text-blue-400' : 'text-blue-600'
+                darkMode ? "text-blue-400" : "text-blue-600"
               }`}
               onClick={(e) => handleModal(e, index)}
             >
               More Info
               <svg
                 className={`${
-                  darkMode ? 'info-svg-dark' : 'info-svg '
+                  darkMode ? "info-svg-dark" : "info-svg "
                 } transition-all duration-200 ml-1 w-8`}
                 xmlns="http://www.w3.org/2000/svg"
-                fill={darkMode ? '#1F2937' : 'white'}
+                fill={darkMode ? "#1F2937" : "white"}
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
@@ -183,12 +209,12 @@ const Projects = () => {
         {modal && (
           <div
             className={`fixed ${
-              darkMode ? 'bg-black-900 text-white' : 'bg-white'
-            } w-full h-screen right-0 top-0 ${
-              modal ? 'right-0' : 'right-full'
-            } transition-all duration-200 z-30`}
+              darkMode ? "bg-black-900 text-white" : "bg-white"
+            } w-full h-screen right-0 top-0 overflow-y-scroll ${
+              modal ? "right-0" : "right-full"
+            } transition-all duration-200 z-30 px-5`}
           >
-            <div className="mx-5 h-screen relative">
+            <div className=" relative">
               <div
                 onClick={handleModal}
                 className="w-min mx-auto text-red-500 modal-button"
@@ -209,10 +235,10 @@ const Projects = () => {
                 </svg>
               </div>
 
-              <div className="relative mx-auto overflow-hidden md:w-1/3 w-full">
+              <div className="relative mx-auto  overflow-hidden max-w-5xl w-full">
                 <img
                   alt="project preview"
-                  className=" mx-auto h-min  rounded-md object-contain object-top shadow-a-xl"
+                  className=" mx-auto rounded-md max-h-custom object-cover object-top shadow-a-xl"
                   src={
                     selectedProject?.imageURLS &&
                     selectedProject.imageURLS[selectedImageIdx]
@@ -225,10 +251,10 @@ const Projects = () => {
                   onClick={(e) => {
                     setSelectedImageIdx((prev) => {
                       if (prev === 0)
-                        return selectedProject.imageURLS.length - 1
+                        return selectedProject.imageURLS.length - 1;
 
-                      return prev - 1
-                    })
+                      return prev - 1;
+                    });
                   }}
                 >
                   <svg
@@ -252,10 +278,10 @@ const Projects = () => {
                   onClick={(e) => {
                     setSelectedImageIdx((prev) => {
                       if (prev === selectedProject.imageURLS.length - 1)
-                        return 0
+                        return 0;
 
-                      return prev + 1
-                    })
+                      return prev + 1;
+                    });
                   }}
                   className="absolute top-0 right-0 h-full  text-white  bg-opacity-25 bg-gray-600 rounded "
                 >
@@ -286,8 +312,8 @@ const Projects = () => {
                 </div>
 
                 <div
-                  className={`flex absolute bottom-0 left-0 mb-5 lg:mb-14 justify-center w-full font-semibold lg:text-4xl text-2xl ${
-                    darkMode ? 'text-pink-600' : 'text-gray-800'
+                  className={`flex mt-10 mb-5 lg:mb-14 justify-center w-full font-semibold lg:text-4xl text-2xl ${
+                    darkMode ? "text-pink-600" : "text-gray-800"
                   } tracking-wide`}
                 >
                   <a
@@ -328,8 +354,8 @@ const Projects = () => {
           </div>
         )}
       </div>
-    )
-  })
+    );
+  });
 
   return (
     <section aria-label="projects">
@@ -363,7 +389,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

@@ -13,3 +13,7 @@
 .indent-2 {
   text-indent: 3rem;
 }
+
+.max-h-custom {
+  max-height: 54rem;
+}

@@ -50,8 +50,8 @@ const Projects = () => {
         "/images/GeoChat/10.png",
         "/images/GeoChat/11.png",
       ],
-      liveURL: "https://iptracker-phi.vercel.app/",
-      sourceURL: "https://github.com/Christopher-Warren/iptracker",
+      liveURL: "",
+      sourceURL: "",
     },
     {
       id: 4,
